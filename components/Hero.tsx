@@ -8,7 +8,7 @@ export default function Hero() {
         <div className="eyebrow">Studio Desain &amp; Development Web</div>
         <h1 className="hero-head">Satu studio. Empat cara hadir online.</h1>
         <p className="hero-sub">
-          INDEKS merancang dan membangun website untuk empat kebutuhan yang paling sering dicari — profil perusahaan, toko online, undangan digital, dan portofolio pribadi. Tiap tipe punya sistem desainnya sendiri, dikerjakan dengan standar presisi yang sama.
+          GerobakLink merancang dan membangun website untuk empat kebutuhan yang paling sering dicari — profil perusahaan, toko online, undangan digital, dan portofolio pribadi. Tiap tipe punya sistem desainnya sendiri, dikerjakan dengan standar presisi yang sama.
         </p>
 
         <div className="hero-actions">

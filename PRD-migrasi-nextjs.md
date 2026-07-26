@@ -1,6 +1,6 @@
 # Addendum PRD — Migrasi ke Next.js + TypeScript
 
-**Berlaku di atas:** `PRD-web-utama-indeks.md` (spesifikasi desain/konten — tetap jadi sumber kebenaran untuk visual & copy)
+**Berlaku di atas:** `PRD-web-utama-gerobaklink.md` (spesifikasi desain/konten — tetap jadi sumber kebenaran untuk visual & copy)
 **Dokumen ini mengatur:** stack teknis, struktur project, dan aturan porting. **Ini migrasi bahasa/framework, BUKAN redesign** — tidak ada satupun nilai visual yang boleh berubah.
 
 ---
@@ -84,7 +84,7 @@ model Lead {
 
 ## 5. Yang TIDAK Boleh Berubah
 
-Seluruh design token, tipografi, radius, border, dan signature interaction dari `PRD-web-utama-indeks.md` §3–§5. Kalau ada bagian yang ambigu saat porting ke React, rujuk balik ke `indeks-demo.html`, bukan menginterpretasi ulang.
+Seluruh design token, tipografi, radius, border, dan signature interaction dari `PRD-web-utama-gerobaklink.md` §3–§5. Kalau ada bagian yang ambigu saat porting ke React, rujuk balik ke `indeks-demo.html`, bukan menginterpretasi ulang.
 
 ---
 

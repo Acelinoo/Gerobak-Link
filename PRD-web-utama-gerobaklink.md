@@ -1,8 +1,8 @@
 # PRD — Website Utama (Katalog 4 Paket Website)
 
-**Nama proyek (placeholder):** INDEKS — Studio Web
+**Nama proyek (placeholder):** GerobakLink — Studio Web
 **Jenis dokumen:** Product Requirements Document untuk build via Antigravity
-**File referensi wajib dilampirkan:** `indeks-demo.html` (prototype visual — jadi ground truth, bukan sekadar inspirasi)
+**File referensi wajib dilampirkan:** `gerobaklink-demo.html` (prototype visual — jadi ground truth, bukan sekadar inspirasi)
 
 ---
 
@@ -72,7 +72,7 @@ Dilarang mengganti ke Inter/Poppins/Roboto atau font default lain.
 
 ### 4.1 Header / Navigasi
 - Fixed top. Transparan di atas hero, dapat background blur + border bawah setelah discroll (>40px).
-- Kiri: wordmark logo (mono) — **[LENGKAPI: nama brand final]**, saat ini pakai placeholder "INDEKS".
+- Kiri: wordmark logo (mono) — **[LENGKAPI: nama brand final]**, saat ini pakai placeholder "GerobakLink".
 - Tengah/kanan: nav ke `#katalog`, `#proses`, `#ulasan`.
 - Kanan: tombol CTA primer "Mulai Project" → scroll ke section kontak.
 
@@ -148,7 +148,7 @@ Semua animasi harus tetap smooth di 60fps dan menghormati `prefers-reduced-motio
 
 ## 8. Checklist Konten yang Harus Dilengkapi Sebelum Live
 
-- [ ] Nama brand & logo final (ganti dari "INDEKS")
+- [ ] Nama brand & logo final (ganti dari "GerobakLink")
 - [ ] Domain
 - [ ] 4 URL live website contoh per kategori
 - [ ] Screenshot/preview asli tiap kategori (ganti panel abstrak)
@@ -161,4 +161,4 @@ Semua animasi harus tetap smooth di 60fps dan menghormati `prefers-reduced-motio
 
 ## 9. Prompt Ringkas untuk Antigravity
 
-> Bangun website ini persis mengikuti struktur, design token, dan interaksi yang dijelaskan di `PRD-web-utama-indeks.md`, dengan `indeks-demo.html` sebagai referensi visual ground-truth (pertahankan fidelity animasi & layout-nya, jangan diinterpretasi ulang secara bebas). Semua bagian yang ditandai `[LENGKAPI: ...]` di PRD adalah tempat aku akan isi konten asli — untuk sekarang gunakan placeholder yang jelas ditandai, jangan mengarang data final. Pastikan responsive penuh, aksesibel (keyboard focus, prefers-reduced-motion), dan performanya ringan.
+> Bangun website ini persis mengikuti struktur, design token, dan interaksi yang dijelaskan di `PRD-web-utama-gerobaklink.md`, dengan `gerobaklink-demo.html` sebagai referensi visual ground-truth (pertahankan fidelity animasi & layout-nya, jangan diinterpretasi ulang secara bebas). Semua bagian yang ditandai `[LENGKAPI: ...]` di PRD adalah tempat aku akan isi konten asli — untuk sekarang gunakan placeholder yang jelas ditandai, jangan mengarang data final. Pastikan responsive penuh, aksesibel (keyboard focus, prefers-reduced-motion), dan performanya ringan.

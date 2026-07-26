@@ -63,7 +63,7 @@ export const Footer: React.FC<FooterProps> = ({ config }) => {
               Pesanan diproses secara real-time via WhatsApp. Pastikan nomor HP aktif untuk mempermudah pengiriman.
             </p>
             <div className="pt-2 text-[11px] text-orange-300 font-medium">
-              Powered by INDEKS Studio
+              Powered by GerobakLink
             </div>
           </div>
         </div>

@@ -4,10 +4,10 @@ export default function Footer() {
   return (
     <footer>
       <div className="wrap">
-        <div className="mono">INDEKS © 2026 — STUDIO WEB</div>
+        <div className="mono">GerobakLink © 2026</div>
         <div className="foot-links">
           <a
-            href="https://instagram.com/indeks.studio"
+            href="https://instagram.com/gerobaklink"
             data-cursor="IG"
             target="_blank"
             rel="noopener noreferrer"
@@ -22,8 +22,8 @@ export default function Footer() {
           >
             WhatsApp
           </a>
-          <a href="mailto:hello@indeks.studio" data-cursor="EMAIL">
-            hello@indeks.studio
+          <a href="mailto:hello@gerobaklink.com" data-cursor="EMAIL">
+            hello@gerobaklink.com
           </a>
         </div>
       </div>

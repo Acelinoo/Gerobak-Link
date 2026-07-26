@@ -1,8 +1,8 @@
 # PRD — Toko Online: Tier PALING MURAH (Contoh Kasus: Toko Makanan)
 
-**Konteks:** Ini adalah situs **contoh/demo** untuk kategori paket **Toko Online** milik INDEKS — Studio Web, tier termurah. Situs ini AKAN jadi link "Lihat contoh situs →" di katalog INDEKS, jadi harus benar-benar berfungsi (bukan mockup statis) dan enak dipakai calon pembeli asli.
+**Konteks:** Ini adalah situs **contoh/demo** untuk kategori paket **Toko Online** milik GerobakLink — Studio Web, tier termurah. Situs ini AKAN jadi link "Lihat contoh situs →" di katalog GerobakLink, jadi harus benar-benar berfungsi (bukan mockup statis) dan enak dipakai calon pembeli asli.
 
-**Penting — ini BUKAN situs INDEKS itu sendiri.** Jangan pakai design token/estetika blueprint INDEKS (Space Grotesk, hairline border, cursor reticle, dst). Ini situs milik bisnis fiktif contoh — sebuah toko makanan — jadi harus terasa seperti toko makanan asli: hangat, appetizing, gampang dipahami orang awam yang mau pesan makanan dari HP-nya.
+**Penting — ini BUKAN situs GerobakLink itu sendiri.** Jangan pakai design token/estetika blueprint GerobakLink (Space Grotesk, hairline border, cursor reticle, dst). Ini situs milik bisnis fiktif contoh — sebuah toko makanan — jadi harus terasa seperti toko makanan asli: hangat, appetizing, gampang dipahami orang awam yang mau pesan makanan dari HP-nya.
 
 ---
 
@@ -94,7 +94,7 @@ Pemilik toko cukup edit langsung di Google Sheet, tanpa login ke sistem terpisah
 
 ## 6. Arahan Desain
 
-- **Bukan** gaya blueprint INDEKS. Desain untuk toko makanan sungguhan: palet warna hangat (merah/oranye/krem), boleh rounded corner (nggak ada aturan sudut tajam di sini), tipografi yang gampang dibaca untuk daftar menu.
+- **Bukan** gaya blueprint GerobakLink. Desain untuk toko makanan sungguhan: palet warna hangat (merah/oranye/krem), boleh rounded corner (nggak ada aturan sudut tajam di sini), tipografi yang gampang dibaca untuk daftar menu.
 - Foto makanan jadi elemen visual utama — kalau belum ada foto asli, pakai placeholder foto makanan yang related dulu, tandai **[LENGKAPI: foto asli]**.
 - Warna & CTA cukup 1 warna aksen kuat (mis. merah cabai) untuk tombol utama (Tambah ke Keranjang, Checkout, Kirim via WA) — jangan terlalu ramai.
 
@@ -132,7 +132,7 @@ Pemilik toko cukup edit langsung di Google Sheet, tanpa login ke sistem terpisah
 
 ## 10. Prompt Ringkas untuk Antigravity
 
-> Bangun website Toko Online tier "Paling Murah" untuk contoh bisnis toko makanan bernama "Dapur Sambel Raja" (placeholder). Situs 1 halaman, TIDAK menggunakan design system INDEKS (bukan blueprint aesthetic) — desain harus terasa seperti toko makanan asli: hangat, mobile-first, foto makanan jadi elemen utama.
+> Bangun website Toko Online tier "Paling Murah" untuk contoh bisnis toko makanan bernama "Dapur Sambel Raja" (placeholder). Situs 1 halaman, TIDAK menggunakan design system GerobakLink (bukan blueprint aesthetic) — desain harus terasa seperti toko makanan asli: hangat, mobile-first, foto makanan jadi elemen utama.
 >
 > Fitur wajib: (1) daftar menu dengan varian pilihan (radio button) dan tombol tambah ke keranjang, tandai item habis stok sebagai nonaktif; (2) keranjang berupa drawer/modal dengan qty, catatan pesanan per item, dan input nomor WA wajib; (3) popup checkout menampilkan ringkasan pesanan, lalu pilihan metode bayar (QRIS/Transfer/COD) — hanya tampilkan metode yang aktif di config — diakhiri tombol yang men-generate pesan WhatsApp otomatis (format pesan sesuai §3.3) dan membuka `wa.me` link, plus menampilkan kode pesanan di layar; (4) jam operasional yang menonaktifkan seluruh pemesanan kalau toko sedang tutup, dengan banner status.
 >

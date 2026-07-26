@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'Sambal Bakar — Pesan Makanan Online Direct WA',
   description: 'Toko makanan online Sambal Bakar. Nikmati hidangan ayam, bebek, dan paket komplit pedas mantap. Order cepat tanpa ribet via WhatsApp.',
   keywords: ['Sambal Bakar', 'Toko Makanan Online', 'Ayam Geprek', 'Pesan WA', 'Kuliner Pedas'],
-  authors: [{ name: 'INDEKS Studio' }],
+  authors: [{ name: 'GerobakLink' }],
 };
 
 export const viewport: Viewport = {

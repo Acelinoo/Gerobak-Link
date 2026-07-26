@@ -24,7 +24,7 @@ const ibmPlexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'INDEKS — Studio Desain & Development Website Presisi',
+  title: 'GerobakLink — Studio Desain & Development Website Presisi',
   description:
     'Studio desain & development website presisi di Indonesia. Melayani pembuatan Company Profile, Toko Online, Undangan Digital, dan Portofolio Pribadi.',
   keywords: [
@@ -37,17 +37,17 @@ export const metadata: Metadata = {
     'web design studio',
   ],
   openGraph: {
-    title: 'INDEKS — Studio Desain & Development Website Presisi',
+    title: 'GerobakLink — Studio Desain & Development Website Presisi',
     description:
       'Satu studio, empat cara hadir online. Katalog 4 paket website presisi untuk bisnis dan kebutuhan personal Anda.',
-    url: 'https://indeks.studio',
-    siteName: 'INDEKS Studio Web',
+    url: 'https://gerobaklink.com',
+    siteName: 'GerobakLink',
     images: [
       {
-        url: 'https://indeks.studio/og-banner.png',
+        url: 'https://gerobaklink.com/og-banner.png',
         width: 1200,
         height: 630,
-        alt: 'INDEKS Studio Web',
+        alt: 'GerobakLink',
       },
     ],
     locale: 'id_ID',
@@ -55,10 +55,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'INDEKS — Studio Desain & Development Website Presisi',
+    title: 'GerobakLink — Studio Desain & Development Website Presisi',
     description:
       'Satu studio, empat cara hadir online. Katalog 4 paket website presisi untuk bisnis dan kebutuhan personal Anda.',
-    images: ['https://indeks.studio/og-banner.png'],
+    images: ['https://gerobaklink.com/og-banner.png'],
   },
 };
 

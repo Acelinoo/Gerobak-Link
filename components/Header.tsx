@@ -18,7 +18,7 @@ export default function Header() {
     <header id="siteHeader" className={isScrolled ? 'is-scrolled' : ''}>
       <div className="wrap">
         <a href="#top" className="logo" data-cursor="HOME">
-          INDEKS <span>/ STUDIO WEB</span>
+          GerobakLink
         </a>
         <nav>
           <ul>

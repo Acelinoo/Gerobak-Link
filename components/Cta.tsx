@@ -82,7 +82,7 @@ export default function Cta() {
               <h3>Konsultasi Langsung via WhatsApp</h3>
               <p>Respon lebih cepat untuk diskusi santai mengenai gambaran situsmu.</p>
               <a
-                href="https://wa.me/6281234567890?text=Halo%20INDEKS,%20saya%20ingin%20konsultasi%20pembuatan%20website"
+                href="https://wa.me/6281234567890?text=Halo%20GerobakLink,%20saya%20ingin%20konsultasi%20pembuatan%20website"
                 className="btn btn-primary"
                 data-cursor="MULAI"
                 target="_blank"

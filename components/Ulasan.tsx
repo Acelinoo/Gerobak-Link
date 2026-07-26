@@ -30,7 +30,7 @@ export default function Ulasan() {
 
       <div className="wrap">
         <div className="ulasan-caption">
-          * Ulasan nyata dari klien yang telah mempercayakan pembuatan situsnya bersama INDEKS.
+          * Ulasan nyata dari klien yang telah mempercayakan pembuatan situsnya bersama GerobakLink.
         </div>
       </div>
     </section>

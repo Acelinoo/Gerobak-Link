@@ -20,7 +20,7 @@ export const PACKAGES: PackageItem[] = [
     priceRange: 'MULAI RP 3.500.000',
     tags: ['Responsif', 'SEO Dasar', 'CMS Ringan'],
     surfaceColor: 'var(--navy)',
-    demoUrl: 'https://company.indeks.studio',
+    demoUrl: 'https://company.gerobaklink.com',
   },
   {
     id: 'kat-02',
@@ -31,7 +31,7 @@ export const PACKAGES: PackageItem[] = [
     priceRange: 'MULAI RP 5.000.000',
     tags: ['Payment Gateway', 'Manajemen Stok', 'Multi Produk'],
     surfaceColor: 'var(--crimson)',
-    demoUrl: 'https://store.indeks.studio',
+    demoUrl: 'https://store.gerobaklink.com',
   },
   {
     id: 'kat-03',
@@ -42,7 +42,7 @@ export const PACKAGES: PackageItem[] = [
     priceRange: 'MULAI RP 450.000',
     tags: ['RSVP Online', 'Galeri Foto', 'Custom Nama'],
     surfaceColor: 'var(--rose)',
-    demoUrl: 'https://undangan.indeks.studio',
+    demoUrl: 'https://undangan.gerobaklink.com',
   },
   {
     id: 'kat-04',
@@ -53,6 +53,6 @@ export const PACKAGES: PackageItem[] = [
     priceRange: 'MULAI RP 1.800.000',
     tags: ['Studi Kasus', 'CV Interaktif', 'Personal Brand'],
     surfaceColor: 'var(--ochre)',
-    demoUrl: 'https://portofolio.indeks.studio',
+    demoUrl: 'https://portofolio.gerobaklink.com',
   },
 ];
