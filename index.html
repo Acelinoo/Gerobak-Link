@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- 
+  ========================================================================
+  [LENGKAPI: SEO & METADATA FINAL]
+  Ganti placeholder metadata di bawah ini sesuai nama brand & value proposition final.
+  ========================================================================
+-->
+<title>[LENGKAPI: Nama Brand Final] — Studio Web (Katalog 4 Paket Website)</title>
+<meta name="description" content="[LENGKAPI: Meta description final — misal: Studio desain & development website presisi untuk Company Profile, Toko Online, Undangan Digital, dan Portofolio.]">
+<meta name="keywords" content="[LENGKAPI: Kata kunci SEO — studio web, jasa pembuatan website, company profile, toko online, undangan digital, portofolio]">
+
+<!-- Open Graph / Social Media Meta Tags -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="[LENGKAPI: Title Open Graph Final]">
+<meta property="og:description" content="[LENGKAPI: Deskripsi Open Graph Final]">
+<meta property="og:url" content="[LENGKAPI: URL Website Live]">
+<meta property="og:image" content="[LENGKAPI: Path URL Gambar Banner Preview OG (1200x630)]">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="[LENGKAPI: Title Twitter Card]">
+<meta name="twitter:description" content="[LENGKAPI: Deskripsi Twitter Card]">
+<meta name="twitter:image" content="[LENGKAPI: Path Gambar Twitter Card]">
+
+<!-- Fonts: Space Grotesk, IBM Plex Sans, IBM Plex Mono -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  /* 
+    ========================================================================
+    DESIGN TOKENS (PRD-web-utama-indeks.md §3)
+    ========================================================================
+  */
+  :root {
+    --paper: #F7F7F4;
+    --paper-dim: #EFEFEA;
+    --ink: #101114;
+    --ink-dim: #55565C;
+    --ink-faint: #9C9D97;
+    --line: #D9DAD3;
+    --blue: #1B3BFF;
+    --blue-dim: #E7EAFF;
+    --navy: #1C2333;
+    --crimson: #E63946;
+    --rose: #B76E79;
+    --ochre: #C08A12;
+
+    --ff-display: 'Space Grotesk', sans-serif;
+    --ff-body: 'IBM Plex Sans', sans-serif;
+    --ff-mono: 'IBM Plex Mono', monospace;
+
+    --ease: cubic-bezier(.16, .84, .44, 1);
+  }
+
+  /* Reset & Base Styles */
+  *, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--ff-body);
+    font-size: 16px;
+    line-height: 1.5;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  img, svg {
+    display: block;
+    max-width: 100%;
+  }
+  button {
+    font: inherit;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: inherit;
+  }
+  ::selection {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  /* Accessibility: Visible Focus Outline */
+  :focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: 3px;
+  }
+
+  /* Utilities */
+  .wrap {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+  .mono {
+    font-family: var(--ff-mono);
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+  .eyebrow {
+    font-family: var(--ff-mono);
+    font-size: 12px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 22px;
+  }
+  .eyebrow::before {
+    content: '';
+    width: 18px;
+    height: 1px;
+    background: var(--ink-dim);
+  }
+
+  /* 
+    ========================================================================
+    SIGNATURE INTERACTION 1: CUSTOM CURSOR RETICLE (PRD §5.1)
+    ========================================================================
+  */
+  .cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 26px;
+    height: 26px;
+    pointer-events: none;
+    z-index: 999;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: difference;
+    will-change: transform, width, height;
+    transition: width .25s var(--ease), height .25s var(--ease);
+  }
+  .cursor-ring {
+    position: absolute;
+    inset: 0;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+  }
+  .cursor-dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 3px;
+    height: 3px;
+    background: #ffffff;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .cursor.is-hover {
+    width: 64px;
+    height: 64px;
+  }
+  .cursor-tag {
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-family: var(--ff-mono);
+    font-size: 10px;
+    letter-spacing: .1em;
+    color: var(--ink-dim);
+    pointer-events: none;
+    z-index: 998;
+    transform: translate(16px, -4px);
+    white-space: nowrap;
+  }
+  /* Disable custom cursor on touch devices */
+  @media (hover: none), (pointer: coarse) {
+    .cursor, .cursor-tag {
+      display: none;
+    }
+  }
+  body.cursor-ready {
+    cursor: none;
+  }
+  body.cursor-ready a, body.cursor-ready button {
+    cursor: none;
+  }
+
+  /* 
+    ========================================================================
+    SIGNATURE INTERACTION 3: SCROLL REVEAL (PRD §5.3)
+    ========================================================================
+  */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity .9s var(--ease), transform .9s var(--ease);
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* Prefers Reduced Motion Accessibility Fallback */
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+    html {
+      scroll-behavior: auto;
+    }
+    .cursor, .cursor-tag {
+      display: none;
+    }
+  }
+
+  /* 
+    ========================================================================
+    SECTION 4.1: HEADER / NAVIGASI
+    ========================================================================
+  */
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 22px 0;
+    transition: background .4s var(--ease), border-color .4s var(--ease), backdrop-filter .4s var(--ease);
+    border-bottom: 1px solid transparent;
+  }
+  header.is-scrolled {
+    background: rgba(247, 247, 244, .86);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-color: var(--line);
+  }
+  header .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo {
+    font-family: var(--ff-mono);
+    font-size: 14px;
+    letter-spacing: .1em;
+    font-weight: 500;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+  .logo span {
+    color: var(--ink-faint);
+    font-size: 11px;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 34px;
+    align-items: center;
+  }
+  nav a {
+    font-family: var(--ff-mono);
+    font-size: 12px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    position: relative;
+    padding: 4px 0;
+  }
+  nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background: var(--ink);
+    transition: width .35s var(--ease);
+  }
+  nav a:hover::after {
+    width: 100%;
+  }
+
+  /* 
+    SIGNATURE INTERACTION 2: MAGNETIC BUTTONS (PRD §5.2)
+    Bentuk: Sudut nyaris tajam (max 2px), border 1px solid
+  */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--ff-mono);
+    font-size: 12px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    padding: 12px 20px;
+    border: 1px solid var(--ink);
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+    background: transparent;
+    color: var(--ink);
+    transition: background-color .3s var(--ease), color .3s var(--ease);
+  }
+  .btn-primary {
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .btn span.mg {
+    display: inline-block;
+    transition: transform .25s var(--ease);
+  }
+
+  @media (max-width: 720px) {
+    nav ul {
+      display: none;
+    }
+  }
+
+  /* 
+    ========================================================================
+    SECTION 4.2: HERO
+    ========================================================================
+  */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 140px;
+    padding-bottom: 80px;
+    position: relative;
+  }
+  .hero .wrap {
+    position: relative;
+  }
+  .hero-grid-lines {
+    position: absolute;
+    inset: 0;
+    top: 120px;
+    bottom: 0;
+    background-image: linear-gradient(to right, var(--line) 1px, transparent 1px);
+    background-size: calc((100% - 0px) / 12) 100%;
+    opacity: .5;
+    pointer-events: none;
+  }
+  h1.hero-head {
+    font-family: var(--ff-display);
+    font-weight: 600;
+    font-size: clamp(40px, 7vw, 92px);
+    line-height: 1.02;
+    letter-spacing: -.02em;
+    max-width: 14ch;
+  }
+  .hero-sub {
+    margin-top: 32px;
+    max-width: 46ch;
+    font-size: clamp(15px, 1.6vw, 18px);
+    color: var(--ink-dim);
+  }
+  .hero-actions {
+    margin-top: 44px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  /* Index Ruler */
+  .index-ruler {
+    margin-top: 96px;
+    border-top: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .index-ruler a {
+    padding: 18px 4px 0;
+    font-family: var(--ff-mono);
+    font-size: 12px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    border-left: 1px solid var(--line);
+    position: relative;
+    transition: color .3s var(--ease);
+  }
+  .index-ruler a:first-child {
+    border-left: none;
+  }
+  .index-ruler a::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--blue);
+    transition: width .4s var(--ease);
+  }
+  .index-ruler a:hover {
+    color: var(--ink);
+  }
+  .index-ruler a:hover::before {
+    width: 100%;
+  }
+  .index-ruler b {
+    display: block;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 2px;
+  }
+
+  .scroll-cue {
+    position: absolute;
+    bottom: 26px;
+    left: 40px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--ff-mono);
+    font-size: 11px;
+    letter-spacing: .1em;
+    color: var(--ink-faint);
+  }
+  .scroll-cue i {
+    width: 1px;
+    height: 32px;
+    background: var(--ink-faint);
+    position: relative;
+    overflow: hidden;
+    display: block;
+  }
+  .scroll-cue i::after {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--ink);
+    animation: cueDrop 2.2s var(--ease) infinite;
+  }
+  @keyframes cueDrop {
+    0% { top: -100%; }
+    60% { top: 100%; }
+    100% { top: 100%; }
+  }
+
+  /* 
+    ========================================================================
+    SECTION SHELL
+    ========================================================================
+  */
+  section {
+    padding: 140px 0;
+    border-top: 1px solid var(--line);
+  }
+  .section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 40px;
+    margin-bottom: 72px;
+    flex-wrap: wrap;
+  }
+  h2.section-title {
+    font-family: var(--ff-display);
+    font-weight: 600;
+    font-size: clamp(30px, 4vw, 48px);
+    letter-spacing: -.01em;
+    max-width: 16ch;
+  }
+  .section-note {
+    max-width: 34ch;
+    color: var(--ink-dim);
+    font-size: 14px;
+  }
+
+  /* 
+    ========================================================================
+    SECTION 4.3: KATALOG (4 KATEGORI)
+    ========================================================================
+  */
+  .katalog-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+    padding: 56px 0;
+    border-top: 1px solid var(--line);
+  }
+  .katalog-row:first-of-type {
+    border-top: 1px solid var(--line);
+  }
+  .katalog-row.reverse {
+    direction: rtl;
+  }
+  .katalog-row.reverse > * {
+    direction: ltr;
+  }
+  .kat-code {
+    font-family: var(--ff-mono);
+    font-size: 12px;
+    color: var(--ink-faint);
+    margin-bottom: 18px;
+    letter-spacing: .1em;
+  }
+  .kat-title {
+    font-family: var(--ff-display);
+    font-weight: 600;
+    font-size: clamp(24px, 2.6vw, 34px);
+    margin-bottom: 16px;
+  }
+  .kat-desc {
+    color: var(--ink-dim);
+    font-size: 15px;
+    max-width: 42ch;
+    margin-bottom: 22px;
+  }
+  .kat-tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 26px;
+  }
+  .kat-tags span {
+    font-family: var(--ff-mono);
+    font-size: 11px;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    padding: 6px 10px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    color: var(--ink-dim);
+  }
+  .kat-link {
+    font-family: var(--ff-mono);
+    font-size: 12px;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 3px;
+  }
+  .kat-link span {
+    transition: transform .3s var(--ease);
+  }
+  .kat-link:hover span {
+    transform: translateX(6px);
+  }
+
+  /* Visual Panel (SIGNATURE INTERACTION 5: HOVER STATE) */
+  .kat-visual {
+    aspect-ratio: 4 / 3;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    background: var(--surface, var(--navy));
+  }
+  .kat-visual .grid-overlay {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(255, 255, 255, .14) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, .14) 1px, transparent 1px);
+    background-size: 12.5% 16.6%;
+    opacity: 0;
+    transition: opacity .5s var(--ease);
+  }
+  .katalog-row:hover .grid-overlay {
+    opacity: 1;
+  }
+  .kat-visual .blocks {
+    position: absolute;
+    inset: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: transform .6s var(--ease);
+  }
+  .katalog-row:hover .kat-visual .blocks {
+    transform: translateY(-6px);
+  }
+  .blocks .b1 {
+    height: 12%;
+    width: 40%;
+    background: rgba(255, 255, 255, .9);
+  }
+  .blocks .b2 {
+    height: 8%;
+    width: 65%;
+    background: rgba(255, 255, 255, .5);
+  }
+  .blocks .rowgrid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+  }
+  .blocks .rowgrid div {
+    background: rgba(255, 255, 255, .16);
+  }
+  .kat-visual .tag-corner {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-family: var(--ff-mono);
+    font-size: 11px;
+    letter-spacing: .08em;
+    color: rgba(255, 255, 255, .85);
+  }
+
+  @media (max-width: 860px) {
+    .katalog-row, .katalog-row.reverse {
+      grid-template-columns: 1fr;
+      direction: ltr;
+    }
+    .kat-visual {
+      order: -1;
+    }
+  }
+
+  /* 
+    ========================================================================
+    SECTION 4.4: PROSES (PROSES LINE DRAW-ON-SCROLL, PRD §5.4)
+    ========================================================================
+  */
+  .proses-list {
+    position: relative;
+  }
+  .proses-line {
+    position: absolute;
+    left: 19px;
+    top: 6px;
+    bottom: 6px;
+    width: 1px;
+    background: var(--line);
+  }
+  .proses-line-fill {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 0%;
+    background: var(--blue);
+    transition: height 1.4s var(--ease);
+  }
+  .proses-step {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 28px;
+    padding: 30px 0;
+    position: relative;
+  }
+  .proses-step .num {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--ff-mono);
+    font-size: 12px;
+    background: var(--paper);
+    z-index: 1;
+    transition: border-color .4s var(--ease), color .4s var(--ease);
+  }
+  .proses-step.is-visible .num {
+    border-color: var(--ink);
+  }
+  .proses-step h3 {
+    font-family: var(--ff-display);
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+  .proses-step p {
+    color: var(--ink-dim);
+    font-size: 14px;
+    max-width: 52ch;
+  }
+
+  /* 
+    ========================================================================
+    SECTION 4.5: ULASAN (MARQUEE HORIZONTAL AUTO-SCROLL, PRD §4.5)
+    ========================================================================
+  */
+  .marquee-wrap {
+    overflow: hidden;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 44px 0;
+  }
+  .marquee {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    animation: scrollX 42s linear infinite;
+  }
+  .marquee-wrap:hover .marquee {
+    animation-play-state: paused;
+  }
+  @keyframes scrollX {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .quote-card {
+    width: 340px;
+    flex: none;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    padding: 26px;
+    background: var(--paper);
+  }
+  .quote-card p {
+    font-size: 15px;
+    line-height: 1.55;
+    margin-bottom: 18px;
+  }
+  .quote-card .src {
+    font-family: var(--ff-mono);
+    font-size: 11px;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  .ulasan-caption {
+    margin-top: 20px;
+    font-size: 12px;
+    color: var(--ink-faint);
+    font-family: var(--ff-mono);
+    letter-spacing: .05em;
+  }
+
+  /* 
+    ========================================================================
+    SECTION 4.6: CTA / KONTAK
+    ========================================================================
+  */
+  .cta {
+    text-align: left;
+    padding-bottom: 100px;
+  }
+  .cta h2 {
+    font-family: var(--ff-display);
+    font-weight: 600;
+    font-size: clamp(34px, 6vw, 74px);
+    letter-spacing: -.02em;
+    max-width: 16ch;
+    margin-bottom: 28px;
+  }
+  .cta p {
+    color: var(--ink-dim);
+    max-width: 48ch;
+    margin-bottom: 40px;
+    font-size: 16px;
+  }
+  .cta-box {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  /* 
+    ========================================================================
+    SECTION 4.7: FOOTER
+    ========================================================================
+  */
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 40px 0;
+  }
+  footer .wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  footer .mono {
+    font-size: 11px;
+    color: var(--ink-faint);
+  }
+  .foot-links {
+    display: flex;
+    gap: 24px;
+  }
+  .foot-links a {
+    font-family: var(--ff-mono);
+    font-size: 11px;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+  }
+  .foot-links a:hover {
+    color: var(--ink);
+  }
+
+  /* Mobile Adjustments */
+  @media (max-width: 600px) {
+    .wrap {
+      padding: 0 22px;
+    }
+    section {
+      padding: 90px 0;
+    }
+    .index-ruler {
+      grid-template-columns: 1fr 1fr;
+    }
+    .index-ruler a:nth-child(3) {
+      border-left: none;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <!-- Custom Cursor & Live Coordinate Readout (PRD §5.1) -->
+  <div class="cursor" id="cursor"><div class="cursor-ring"></div><div class="cursor-dot"></div></div>
+  <div class="cursor-tag" id="cursorTag"></div>
+
+  <!-- 4.1 Header / Navigasi -->
+  <header id="siteHeader">
+    <div class="wrap">
+      <!-- 
+        [LENGKAPI: Nama Brand Final]
+        Ganti "INDEKS" dengan nama brand final begitu diputuskan.
+      -->
+      <a href="#top" class="logo" data-cursor="HOME">[LENGKAPI: INDEKS] <span>/ STUDIO WEB</span></a>
+      <nav>
+        <ul>
+          <li><a href="#katalog" data-cursor="GO">Katalog</a></li>
+          <li><a href="#proses" data-cursor="GO">Proses</a></li>
+          <li><a href="#ulasan" data-cursor="GO">Ulasan</a></li>
+        </ul>
+      </nav>
+      <a href="#cta" class="btn btn-primary" data-cursor="PILIH">Mulai Project <span class="mg">→</span></a>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- 4.2 Hero Section -->
+    <section class="hero" style="border-top:none;">
+      <div class="hero-grid-lines" aria-hidden="true"></div>
+      <div class="wrap">
+        <div class="eyebrow">[LENGKAPI: Studio Desain &amp; Development Web]</div>
+        <!-- 
+          [LENGKAPI: Headline & Subtext Final Hero]
+        -->
+        <h1 class="hero-head">[LENGKAPI: Satu studio. Empat cara hadir online.]</h1>
+        <p class="hero-sub">[LENGKAPI: INDEKS merancang dan membangun website untuk empat kebutuhan yang paling sering dicari — profil perusahaan, toko online, undangan digital, dan portofolio pribadi. Tiap tipe punya sistem desainnya sendiri, dikerjakan dengan standar presisi yang sama.]</p>
+        
+        <div class="hero-actions">
+          <a href="#katalog" class="btn btn-primary" data-cursor="LIHAT">Lihat Katalog <span class="mg">→</span></a>
+          <a href="#proses" class="btn" data-cursor="PROSES">Cara Kerja Kami</a>
+        </div>
+
+        <!-- Index Ruler (4 Kategori Links) -->
+        <div class="index-ruler">
+          <a href="#kat-01" data-cursor="01"><b>01 · Profil</b>Company Profile</a>
+          <a href="#kat-02" data-cursor="02"><b>02 · Toko</b>Toko Online</a>
+          <a href="#kat-03" data-cursor="03"><b>03 · Undangan</b>Undangan Digital</a>
+          <a href="#kat-04" data-cursor="04"><b>04 · Karya</b>Portofolio</a>
+        </div>
+      </div>
+
+      <!-- Scroll Cue Indicator -->
+      <div class="scroll-cue"><i></i>Scroll</div>
+    </section>
+
+    <!-- 4.3 Katalog (4 Kategori Website) -->
+    <section id="katalog">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">Katalog — 04 Tipe Situs</div>
+            <h2 class="section-title">Pilih titik awal yang tepat.</h2>
+          </div>
+          <p class="section-note">Empat kategori ini menutup hampir semua kebutuhan situs bisnis maupun personal. Tiap kategori bisa kamu preview sebagai contoh sebelum memutuskan.</p>
+        </div>
+
+        <!-- 01 / 04: Company Profile -->
+        <div class="katalog-row reveal" id="kat-01">
+          <div>
+            <div class="kat-code">01 / 04</div>
+            <h3 class="kat-title">Company Profile</h3>
+            <p class="kat-desc">Untuk bisnis yang butuh tampil kredibel — profil, layanan, tim, dan kontak, tersusun rapi dan cepat diakses.</p>
+            <div class="kat-tags"><span>Responsif</span><span>SEO Dasar</span><span>CMS Ringan</span></div>
+            <!-- 
+              [LENGKAPI: URL Live Website Company Profile]
+              Ganti href="#" dengan link domain live saat website contoh telah di-deploy.
+            -->
+            <a href="#" class="kat-link" data-cursor="LIHAT" target="_blank" rel="noopener">[LENGKAPI: Lihat contoh situs] <span>→</span></a>
+          </div>
+          <div class="kat-visual" style="--surface: var(--navy);">
+            <div class="grid-overlay"></div>
+            <div class="tag-corner">PKG.01</div>
+            <!-- 
+              [LENGKAPI: Screenshot/Preview Asli Web Company Profile]
+              Begitu live, ganti blok visual abstrak berikut dengan elemen <img> WebP terkompresi.
+            -->
+            <div class="blocks">
+              <div class="b1"></div>
+              <div class="b2"></div>
+              <div class="rowgrid"><div></div><div></div><div></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 02 / 04: Toko Online -->
+        <div class="katalog-row reverse reveal" id="kat-02">
+          <div>
+            <div class="kat-code">02 / 04</div>
+            <h3 class="kat-title">Toko Online</h3>
+            <p class="kat-desc">Katalog produk, keranjang, checkout, dan integrasi pembayaran — dibangun untuk konversi, bukan cuma tampil.</p>
+            <div class="kat-tags"><span>Payment Gateway</span><span>Manajemen Stok</span><span>Multi Produk</span></div>
+            <!-- 
+              [LENGKAPI: URL Live Website Toko Online]
+              Ganti href="#" dengan link domain live saat website contoh telah di-deploy.
+            -->
+            <a href="#" class="kat-link" data-cursor="LIHAT" target="_blank" rel="noopener">[LENGKAPI: Lihat contoh situs] <span>→</span></a>
+          </div>
+          <div class="kat-visual" style="--surface: var(--crimson);">
+            <div class="grid-overlay"></div>
+            <div class="tag-corner">PKG.02</div>
+            <!-- 
+              [LENGKAPI: Screenshot/Preview Asli Web Toko Online]
+              Begitu live, ganti blok visual abstrak berikut dengan elemen <img> WebP terkompresi.
+            -->
+            <div class="blocks">
+              <div class="b1"></div>
+              <div class="b2"></div>
+              <div class="rowgrid"><div></div><div></div><div></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 03 / 04: Undangan Digital -->
+        <div class="katalog-row reveal" id="kat-03">
+          <div>
+            <div class="kat-code">03 / 04</div>
+            <h3 class="kat-title">Undangan Digital</h3>
+            <p class="kat-desc">Undangan pernikahan atau acara dengan nuansa personal, RSVP, galeri, dan musik — elegan tanpa terasa template.</p>
+            <div class="kat-tags"><span>RSVP Online</span><span>Galeri Foto</span><span>Custom Nama</span></div>
+            <!-- 
+              [LENGKAPI: URL Live Website Undangan Digital]
+              Ganti href="#" dengan link domain live saat website contoh telah di-deploy.
+            -->
+            <a href="#" class="kat-link" data-cursor="LIHAT" target="_blank" rel="noopener">[LENGKAPI: Lihat contoh situs] <span>→</span></a>
+          </div>
+          <div class="kat-visual" style="--surface: var(--rose);">
+            <div class="grid-overlay"></div>
+            <div class="tag-corner">PKG.03</div>
+            <!-- 
+              [LENGKAPI: Screenshot/Preview Asli Web Undangan Digital]
+              Begitu live, ganti blok visual abstrak berikut dengan elemen <img> WebP terkompresi.
+            -->
+            <div class="blocks">
+              <div class="b1"></div>
+              <div class="b2"></div>
+              <div class="rowgrid"><div></div><div></div><div></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 04 / 04: Portofolio -->
+        <div class="katalog-row reverse reveal" id="kat-04">
+          <div>
+            <div class="kat-code">04 / 04</div>
+            <h3 class="kat-title">Portofolio</h3>
+            <p class="kat-desc">Untuk individu kreatif — karya, studi kasus, dan identitas personal yang mudah diingat orang lain.</p>
+            <div class="kat-tags"><span>Studi Kasus</span><span>CV Interaktif</span><span>Personal Brand</span></div>
+            <!-- 
+              [LENGKAPI: URL Live Website Portofolio]
+              Ganti href="#" dengan link domain live saat website contoh telah di-deploy.
+            -->
+            <a href="#" class="kat-link" data-cursor="LIHAT" target="_blank" rel="noopener">[LENGKAPI: Lihat contoh situs] <span>→</span></a>
+          </div>
+          <div class="kat-visual" style="--surface: var(--ochre);">
+            <div class="grid-overlay"></div>
+            <div class="tag-corner">PKG.04</div>
+            <!-- 
+              [LENGKAPI: Screenshot/Preview Asli Web Portofolio]
+              Begitu live, ganti blok visual abstrak berikut dengan elemen <img> WebP terkompresi.
+            -->
+            <div class="blocks">
+              <div class="b1"></div>
+              <div class="b2"></div>
+              <div class="rowgrid"><div></div><div></div><div></div></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4.4 Proses Section -->
+    <section id="proses">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">Proses</div>
+            <h2 class="section-title">Empat tahap, satu standar.</h2>
+          </div>
+          <p class="section-note">Semua tipe situs melalui alur yang sama — bedanya cuma di detail desain dan fitur tiap kategori.</p>
+        </div>
+
+        <div class="proses-list">
+          <div class="proses-line"><div class="proses-line-fill" id="prosesFill"></div></div>
+          <div class="proses-step reveal">
+            <div class="num">01</div>
+            <div><h3>Konsultasi</h3><p>Diskusi kebutuhan, tipe situs yang paling cocok, dan referensi yang kamu suka.</p></div>
+          </div>
+          <div class="proses-step reveal">
+            <div class="num">02</div>
+            <div><h3>Desain</h3><p>Sistem desain dibangun khusus untuk kategori situsmu, bukan tempel dari template.</p></div>
+          </div>
+          <div class="proses-step reveal">
+            <div class="num">03</div>
+            <div><h3>Build</h3><p>Development, revisi, dan pengujian di berbagai perangkat sebelum dianggap selesai.</p></div>
+          </div>
+          <div class="proses-step reveal">
+            <div class="num">04</div>
+            <div><h3>Deploy &amp; Review</h3><p>Situs live di domainmu, kamu review langsung, dan siap dipakai.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4.5 Ulasan Section -->
+    <section id="ulasan">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">Ulasan</div>
+            <h2 class="section-title">Kata mereka yang sudah pakai.</h2>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 
+        [LENGKAPI: Testimoni Asli Klien]
+        Ganti seluruh card quote di bawah ini dengan ulasan asli dari klien beserta izin mereka.
+      -->
+      <div class="marquee-wrap reveal">
+        <div class="marquee" id="marquee">
+          <div class="quote-card"><p>“Prosesnya jelas dari awal, hasilnya di luar ekspektasi.”</p><div class="src">Klien — Toko Online</div></div>
+          <div class="quote-card"><p>“Nggak nyangka undangan digital bisa serapi ini, tamu banyak yang nanya bikin di mana.”</p><div class="src">Klien — Undangan Digital</div></div>
+          <div class="quote-card"><p>“Timnya paham banget apa yang bisnis kami butuhkan, nggak asal desain.”</p><div class="src">Klien — Company Profile</div></div>
+          <div class="quote-card"><p>“Portofolio saya akhirnya kelihatan profesional, bukan cuma kumpulan link.”</p><div class="src">Klien — Portofolio</div></div>
+          <div class="quote-card"><p>“Komunikasi lancar, revisi cepat, hasil akhirnya rapi banget.”</p><div class="src">Klien — Toko Online</div></div>
+          <div class="quote-card"><p>“Desainnya beda dari kebanyakan studio lain yang pernah kami lihat.”</p><div class="src">Klien — Company Profile</div></div>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="ulasan-caption">* [LENGKAPI: Contoh ulasan ilustratif — ganti dengan ulasan asli dari klienmu sebelum publish.]</div>
+      </div>
+    </section>
+
+    <!-- 4.6 CTA / Kontak Section -->
+    <section id="cta">
+      <div class="wrap cta">
+        <div class="reveal">
+          <h2>Siap pilih yang mana?</h2>
+          <p>Konsultasi awal gratis — ceritakan kebutuhanmu, kami bantu tentukan tipe situs yang paling pas sebelum mulai desain.</p>
+          <div class="cta-box">
+            <!-- 
+              [LENGKAPI: Mekanisme Kontak Final (WhatsApp URL)]
+              Ganti href WA dengan nomor asli, misal: https://wa.me/6281234567890?text=Halo%20INDEKS,%20saya%20ingin%20konsultasi%20pembuatan%20website
+            -->
+            <a href="https://wa.me/[LENGKAPI_NOMOR_WA]?text=Halo%20[LENGKAPI_NAMA_BRAND],%20saya%20ingin%20konsultasi%20pembuatan%20website" class="btn btn-primary" data-cursor="MULAI" target="_blank" rel="noopener">
+              [LENGKAPI: Mulai Konsultasi via WhatsApp] <span class="mg">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 4.7 Footer -->
+  <footer>
+    <div class="wrap">
+      <!-- 
+        [LENGKAPI: Copyright & Nama Brand Final]
+      -->
+      <div class="mono">[LENGKAPI: INDEKS] © 2026 — STUDIO WEB</div>
+      <div class="foot-links">
+        <!-- 
+          [LENGKAPI: Link Sosial Media & Kontak Asli]
+        -->
+        <a href="[LENGKAPI: URL Instagram]" data-cursor="IG" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://wa.me/[LENGKAPI_NOMOR_WA]" data-cursor="WA" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="mailto:[LENGKAPI_EMAIL]" data-cursor="EMAIL">hello@[LENGKAPI_DOMAIN].studio</a>
+      </div>
+    </div>
+  </footer>
+
+<script>
+(function(){
+  var canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ------------------------------------------------------------------------
+  // SIGNATURE INTERACTION 1: CUSTOM CURSOR RETICLE + LIVE COORDINATES (PRD §5.1)
+  // ------------------------------------------------------------------------
+  if(canHover && !reduceMotion){
+    document.body.classList.add('cursor-ready');
+    var cursor = document.getElementById('cursor');
+    var tag = document.getElementById('cursorTag');
+    var mx=0, my=0, cx=0, cy=0;
+
+    window.addEventListener('mousemove', function(e){
+      mx = e.clientX; 
+      my = e.clientY;
+      tag.style.transform = 'translate(' + (mx + 16) + 'px,' + (my - 4) + 'px)';
+      if(!tag.dataset.locked){
+        tag.textContent = 'X' + String(mx).padStart(3, '0') + ' Y' + String(my).padStart(3, '0');
+      }
+    });
+
+    function raf(){
+      cx += (mx - cx) * 0.18;
+      cy += (my - cy) * 0.18;
+      cursor.style.transform = 'translate(' + cx + 'px,' + cy + 'px) translate(-50%,-50%)';
+      requestAnimationFrame(raf);
+    }
+    raf();
+
+    document.querySelectorAll('[data-cursor], a, button').forEach(function(el){
+      el.addEventListener('mouseenter', function(){
+        cursor.classList.add('is-hover');
+        var label = el.getAttribute('data-cursor');
+        if(label){ 
+          tag.textContent = label; 
+          tag.dataset.locked = '1'; 
+        }
+      });
+      el.addEventListener('mouseleave', function(){
+        cursor.classList.remove('is-hover');
+        delete tag.dataset.locked;
+      });
+    });
+  }
+
+  // ------------------------------------------------------------------------
+  // HEADER SCROLLED STATE (PRD §4.1)
+  // ------------------------------------------------------------------------
+  var header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', function(){
+    header.classList.toggle('is-scrolled', window.scrollY > 40);
+  }, {passive: true});
+
+  // ------------------------------------------------------------------------
+  // SIGNATURE INTERACTION 3: SCROLL REVEAL (PRD §5.3)
+  // ------------------------------------------------------------------------
+  var reveals = document.querySelectorAll('.reveal, .proses-step');
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){ 
+        en.target.classList.add('is-visible'); 
+      }
+    });
+  }, {threshold: 0.18});
+  reveals.forEach(function(el){ io.observe(el); });
+
+  // ------------------------------------------------------------------------
+  // SIGNATURE INTERACTION 4: PROSES LINE DRAW-ON-SCROLL (PRD §5.4)
+  // ------------------------------------------------------------------------
+  var prosesFill = document.getElementById('prosesFill');
+  var prosesList = document.querySelector('.proses-list');
+  if(prosesList && prosesFill){
+    var io2 = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ 
+          prosesFill.style.height = '100%'; 
+        }
+      });
+    }, {threshold: 0.3});
+    io2.observe(prosesList);
+  }
+
+  // ------------------------------------------------------------------------
+  // SIGNATURE INTERACTION 2: MAGNETIC BUTTONS (PRD §5.2)
+  // ------------------------------------------------------------------------
+  if(canHover && !reduceMotion){
+    document.querySelectorAll('.btn').forEach(function(btn){
+      btn.addEventListener('mousemove', function(e){
+        var r = btn.getBoundingClientRect();
+        var x = e.clientX - r.left - r.width/2;
+        var y = e.clientY - r.top - r.height/2;
+        btn.style.transform = 'translate(' + (x * 0.18) + 'px,' + (y * 0.32) + 'px)';
+      });
+      btn.addEventListener('mouseleave', function(){
+        btn.style.transform = 'translate(0,0)';
+      });
+    });
+  }
+
+  // ------------------------------------------------------------------------
+  // ULASAN: MARQUEE DUPLICATE FOR SEAMLESS INFINITE LOOP (PRD §4.5)
+  // ------------------------------------------------------------------------
+  var marquee = document.getElementById('marquee');
+  if(marquee){ 
+    marquee.innerHTML += marquee.innerHTML; 
+  }
+})();
+</script>
+</body>
+</html>

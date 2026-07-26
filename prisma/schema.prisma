@@ -1,0 +1,17 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Lead {
+  id        String   @id @default(cuid())
+  name      String
+  contact   String   // Email atau nomor WhatsApp
+  interest  String?  // Kategori paket yang diminati
+  message   String?  // Kebutuhan / detail pesan
+  createdAt DateTime @default(now())
+}
