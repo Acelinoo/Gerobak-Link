@@ -1,0 +1,275 @@
+/* ============================================
+   DESIGN SYSTEM — Engineering Precision
+   Swiss International × Neo-Brutalism
+   ============================================ */
+
+/* — Design Tokens — */
+:root {
+  --navy-ink: #10141F;
+  --paper-white: #F4F3EF;
+  --signal-red: #D6401F;
+
+  --font-display: 'Archivo Black', 'Arial Black', sans-serif;
+  --font-body: 'Archivo', 'Helvetica Neue', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+
+  --border-weight: 2.5px;
+  --border-thin: 1px;
+  --grid-line: 1px solid rgba(16, 20, 31, 0.10);
+  --grid-line-dark: 1px solid rgba(244, 243, 239, 0.10);
+  --border-solid: var(--border-weight) solid var(--navy-ink);
+  --border-solid-light: var(--border-weight) solid var(--paper-white);
+
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 6rem;
+  --space-2xl: 8rem;
+  --space-3xl: 12rem;
+
+  --max-width: 1440px;
+  --content-padding: 4rem;
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --content-padding: 1.5rem;
+    --space-3xl: 6rem;
+    --space-2xl: 4rem;
+    --space-xl: 3rem;
+  }
+  
+  body {
+    padding-bottom: 60px; /* Space for mobile nav */
+  }
+}
+
+/* — Reset & Base — */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border-radius: 0 !important; /* Neo-brutalist: NO rounded corners */
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--navy-ink);
+  background-color: var(--paper-white);
+  overflow-x: hidden;
+}
+
+/* — Typography Scale — */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 400; /* Archivo Black is already bold */
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+h1 { font-size: clamp(3.5rem, 8vw, 9rem); }
+h2 { font-size: clamp(2rem, 4vw, 3.5rem); }
+h3 { font-size: clamp(1.25rem, 2vw, 1.75rem); }
+
+p {
+  font-family: var(--font-body);
+  font-size: clamp(0.95rem, 1.1vw, 1.125rem);
+  line-height: 1.7;
+  max-width: 60ch;
+}
+
+/* — Monospace Accent — */
+.mono {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.mono-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* — Index Numbers — */
+.index-number {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--signal-red);
+  line-height: 1;
+}
+
+.index-number--large {
+  font-size: clamp(3rem, 5vw, 5rem);
+}
+
+.index-number--medium {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+}
+
+/* — Section Structure — */
+.section {
+  position: relative;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-xl) var(--content-padding);
+}
+
+.section--dark {
+  background-color: var(--navy-ink);
+  color: var(--paper-white);
+  max-width: 100%;
+}
+
+.section--dark .section__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--content-padding);
+}
+
+.section__header {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-sm);
+  border-bottom: var(--grid-line);
+}
+
+.section__header--dark {
+  border-bottom: var(--grid-line-dark);
+}
+
+.section__number {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--signal-red);
+  letter-spacing: 0.05em;
+}
+
+.section__title {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* — Grid Line Dividers — */
+.divider {
+  width: 100%;
+  height: var(--border-thin);
+  background-color: rgba(16, 20, 31, 0.10);
+  border: none;
+}
+
+.divider--dark {
+  background-color: rgba(244, 243, 239, 0.10);
+}
+
+.divider--heavy {
+  height: var(--border-weight);
+  background-color: var(--navy-ink);
+}
+
+/* — Card (Neo-Brutalist) — */
+.card {
+  border: var(--border-solid);
+  padding: var(--space-md);
+  background: var(--paper-white);
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translate(-3px, -3px);
+}
+
+.card--dark {
+  border-color: var(--paper-white);
+  background: var(--navy-ink);
+  color: var(--paper-white);
+}
+
+/* — Links — */
+a {
+  color: inherit;
+  text-decoration: none;
+  position: relative;
+}
+
+a.link-underline {
+  display: inline-block;
+}
+
+a.link-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: var(--signal-red);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+a.link-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* — Selection — */
+::selection {
+  background-color: var(--signal-red);
+  color: var(--paper-white);
+}
+
+/* — Scrollbar — */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--paper-white);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--navy-ink);
+  border: none;
+}
+
+/* — Utility — */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.text-red {
+  color: var(--signal-red);
+}

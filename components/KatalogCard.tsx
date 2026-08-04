@@ -42,17 +42,83 @@ export default function KatalogCard({ item, isReverse = false }: KatalogCardProp
         className="kat-visual"
         style={{ '--surface': item.surfaceColor } as React.CSSProperties}
       >
-        <div className="grid-overlay" />
-        <div className="tag-corner">{item.pkgTag}</div>
-        <div className="blocks">
-          <div className="b1" />
-          <div className="b2" />
-          <div className="rowgrid">
-            <div />
-            <div />
-            <div />
+        {item.id === 'kat-01' ? (
+          <div style={{
+            position: 'absolute',
+            top: 0, left: 0, right: 0, bottom: 0,
+            zIndex: 0,
+            overflow: 'hidden',
+            backgroundColor: '#0a0a0a',
+          }}>
+            <img 
+              src="/company-profile.png" 
+              style={{ 
+                position: 'absolute',
+                top: 0, left: 0,
+                width: '100%', 
+                height: '100%', 
+                objectFit: 'cover',
+                pointerEvents: 'none'
+              }}
+              alt={item.title}
+            />
           </div>
-        </div>
+        ) : item.id === 'kat-03' ? (
+          <div style={{
+            position: 'absolute',
+            top: 0, left: 0, right: 0, bottom: 0,
+            zIndex: 0,
+            overflow: 'hidden',
+            backgroundColor: '#0a0a0a',
+          }}>
+            <img 
+              src="/undangan-digital.png" 
+              style={{ 
+                position: 'absolute',
+                top: 0, left: 0,
+                width: '100%', 
+                height: '100%', 
+                objectFit: 'cover',
+                pointerEvents: 'none'
+              }}
+              alt={item.title}
+            />
+          </div>
+        ) : item.id === 'kat-04' ? (
+          <div style={{
+            position: 'absolute',
+            top: 0, left: 0, right: 0, bottom: 0,
+            zIndex: 0,
+            overflow: 'hidden',
+            backgroundColor: '#0a0a0a',
+          }}>
+            <img 
+              src="/portofolio.png" 
+              style={{ 
+                position: 'absolute',
+                top: 0, left: 0,
+                width: '100%', 
+                height: '100%', 
+                objectFit: 'cover',
+                pointerEvents: 'none'
+              }}
+              alt={item.title}
+            />
+          </div>
+        ) : (
+          <div className="blocks" style={{ zIndex: 0 }}>
+            <div className="b1" />
+            <div className="b2" />
+            <div className="rowgrid">
+              <div />
+              <div />
+              <div />
+            </div>
+          </div>
+        )}
+        
+        <div className="grid-overlay" style={{ zIndex: 1 }} />
+        <div className="tag-corner" style={{ zIndex: 2 }}>{item.pkgTag}</div>
       </div>
     </div>
   );

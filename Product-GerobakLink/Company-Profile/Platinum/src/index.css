@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme {
+  --color-neutral-950: #0a0a0a;
+  --color-neutral-900: #171717;
+  --color-neutral-800: #262626;
+  --color-neutral-50: #fafafa;
+  --color-gold-200: #fde68a;
+  --color-gold-400: #fbbf24;
+  --color-gold-500: #f59e0b;
+  --color-gold-600: #d97706;
+  --color-champagne: #D4AF37;
+  
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-neutral-950 text-neutral-50 overflow-x-hidden;
+  }
+  
+  /* Hide default cursor on desktop since we use custom cursor */
+  @media (min-width: 768px) {
+    * {
+      cursor: none !important;
+    }
+  }
+}
+
+@layer utilities {
+  .glass-nav {
+    @apply bg-neutral-950/50 backdrop-blur-md border-b border-white/10;
+  }
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl shadow-2xl;
+  }
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-neutral-50 to-neutral-400;
+  }
+  .gold-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-gold-200 to-champagne;
+  }
+}

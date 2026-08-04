@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pernikahan Zendaya & Tom — 24 Oktober 2026 | Platinum Invitation</title>
+  <meta name="description" content="Dengan memohon rahmat Allah SWT, kami mengundang Anda untuk hadir di hari pernikahan Zendaya & Tom.">
+
+  <!-- Open Graph / WhatsApp Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Pernikahan Zendaya & Tom — Platinum Invitation">
+  <meta property="og:description" content="Sabtu, 24 Oktober 2026 — Bandung. Kami mengundang Anda untuk turut berbagi kebahagiaan.">
+  <meta property="og:image" content="assets/images/image copy 2.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Luxury Platinum Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,600&family=Great+Vibes&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="no-scroll">
+
+  <!-- Ambient Gold Sparkles Particle Overlay -->
+  <div class="sparkles-container" id="sparklesContainer"></div>
+
+  <!-- Reusable SVG Symbols -->
+  <svg style="display: none;">
+    <!-- Botanical Corner -->
+    <symbol id="svg-botanical-corner" viewBox="0 0 100 100">
+      <path d="M5,5 C30,10 60,30 80,80 C60,50 30,30 5,5 Z" fill="currentColor" opacity="0.35"/>
+      <path d="M5,5 C10,30 30,60 80,80 C50,60 30,30 5,5 Z" fill="currentColor" opacity="0.25"/>
+      <path d="M5,5 Q40,15 90,5" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.7"/>
+      <path d="M5,5 Q15,40 5,90" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.7"/>
+      <circle cx="90" cy="5" r="2.5" fill="currentColor" opacity="0.85"/>
+      <circle cx="5" cy="90" r="2.5" fill="currentColor" opacity="0.85"/>
+      <path d="M25,25 Q45,35 60,60" stroke="currentColor" stroke-width="1" stroke-dasharray="2 2" fill="none" opacity="0.5"/>
+    </symbol>
+
+    <!-- Botanical Divider -->
+    <symbol id="svg-botanical-divider" viewBox="0 0 200 30">
+      <path d="M10,15 Q50,5 90,15 T170,15" stroke="currentColor" stroke-width="1" fill="none" opacity="0.6"/>
+      <path d="M10,15 Q50,25 90,15 T170,15" stroke="currentColor" stroke-width="1" fill="none" opacity="0.4"/>
+      <circle cx="100" cy="15" r="4" fill="currentColor" opacity="0.85"/>
+      <circle cx="85" cy="15" r="2" fill="currentColor" opacity="0.6"/>
+      <circle cx="115" cy="15" r="2" fill="currentColor" opacity="0.6"/>
+      <path d="M100,5 Q105,10 100,15 Q95,10 100,5" fill="currentColor" opacity="0.7"/>
+    </symbol>
+
+    <!-- Calendar Icon -->
+    <symbol id="svg-calendar" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zm-7 5h5v5h-5z"/>
+    </symbol>
+  </svg>
+
+  <!-- ===== 1. SAMPUL PEMBUKA (ROYAL COVER ENVELOPE) ===== -->
+  <div id="cover" class="cover">
+    <div class="cover__inner">
+      <p class="cover__label">Pernikahan</p>
+      <h1 class="cover__names gold-text">Zendaya<br>&amp; Tom</h1>
+      <p class="cover__date">24 Oktober 2026</p>
+      
+      <svg class="botanical-divider"><use href="#svg-botanical-divider"></use></svg>
+
+      <p class="cover__to">Kepada Yth. Bapak/Ibu/Saudara/i</p>
+      <p class="cover__guest" id="guestName">Tamu Undangan</p>
+
+      <button class="cover__btn" id="openBtn" aria-label="Buka Undangan">
+        <span class="btn-ripple"></span>
+        Buka<br>Undangan
+      </button>
+    </div>
+  </div>
+
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main id="mainContent" class="main-content">
+
+    <!-- ===== 2. HERO (Cinematic Parallax & Royal Crest) ===== -->
+    <section class="hero" id="hero">
+      <div class="hero__bg" id="heroBg">
+        <img
+          class="hero__bg-img ken-burns"
+          src="assets/images/image copy 2.png"
+          alt="Foto Pre-wedding Zendaya & Tom"
+        >
+      </div>
+      <div class="hero__overlay"></div>
+
+      <div class="hero__content">
+        <div class="royal-monogram">K &bull; A</div>
+        <p class="hero__label">The Wedding of</p>
+        <h2 class="hero__names gold-text">Zendaya &amp; Tom</h2>
+        <p class="hero__date">Sabtu, 24 Oktober 2026 &bull; Bandung, Indonesia</p>
+        
+        <svg class="botanical-divider"><use href="#svg-botanical-divider"></use></svg>
+        
+        <p class="hero__verse">
+          "Dan di antara tanda-tanda kebesaran-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu merasa tenteram kepadanya."
+        </p>
+      </div>
+    </section>
+
+    <div class="section-sep"></div>
+
+
+    <!-- ===== 3. HITUNG MUNDUR (REALTIME COUNTDOWN) ===== -->
+    <section class="section countdown reveal" id="countdown">
+      <svg class="ornament ornament--tl"><use href="#svg-botanical-corner"></use></svg>
+      <svg class="ornament ornament--tr"><use href="#svg-botanical-corner"></use></svg>
+
+      <h2>Menuju Hari Bahagia</h2>
+      <p class="section-subtitle">Hitung mundur menuju momen suci kami</p>
+
+      <div class="countdown__grid reveal-stagger">
+        <div class="countdown__item shimmer-card">
+          <span class="countdown__number" id="cdDays">00</span>
+          <span class="countdown__label">Hari</span>
+        </div>
+        <div class="countdown__item shimmer-card">
+          <span class="countdown__number" id="cdHours">00</span>
+          <span class="countdown__label">Jam</span>
+        </div>
+        <div class="countdown__item shimmer-card">
+          <span class="countdown__number" id="cdMins">00</span>
+          <span class="countdown__label">Menit</span>
+        </div>
+        <div class="countdown__item shimmer-card">
+          <span class="countdown__number" id="cdSecs">00</span>
+          <span class="countdown__label">Detik</span>
+        </div>
+      </div>
+
+      <div class="timezone-badge mt-4">Waktu Indonesia Barat (WIB) &bull; Asia/Jakarta</div>
+    </section>
+
+    <div class="section-sep"></div>
+
+
+    <!-- ===== 4. CERITA KAMI ===== -->
+    <section class="section reveal" id="story">
+      <h2>Cerita Kami</h2>
+      <p class="section-subtitle">Perjalanan dua hati menyatu dalam ikatan suci</p>
+
+      <div class="timeline">
+        <svg class="timeline__vine" id="timelineVine">
+          <line x1="1" y1="0" x2="1" y2="100%" />
+        </svg>
+
+        <div class="timeline__item">
+          <p class="timeline__date">Agustus 2019</p>
+          <h3 class="timeline__title">Pertama Bertemu</h3>
+          <p class="timeline__text">Kami bertemu di perpustakaan kampus, saling bertukar senyum di antara tumpukan buku yang sama.</p>
+        </div>
+        <div class="timeline__item">
+          <p class="timeline__date">Februari 2020</p>
+          <h3 class="timeline__title">Awal Jalinan Kasih</h3>
+          <p class="timeline__text">Secangkir kopi hangat di Braga menjadi saksi pertama kalinya kami resmi melangkah bersama.</p>
+        </div>
+        <div class="timeline__item">
+          <p class="timeline__date">Desember 2022</p>
+          <h3 class="timeline__title">Perjalanan Cinta</h3>
+          <p class="timeline__text">Menyusuri jalanan malam dan berbagi impian tentang masa depan yang ingin kami bangun berdua.</p>
+        </div>
+        <div class="timeline__item">
+          <p class="timeline__date">April 2025</p>
+          <h3 class="timeline__title">Momen Pinangan</h3>
+          <p class="timeline__text">Di bawah senja Bandung, Tom menyampaikan niat tulus untuk menjadikan Zendaya teman sehidup semati.</p>
+        </div>
+        <div class="timeline__item">
+          <p class="timeline__date">Oktober 2026</p>
+          <h3 class="timeline__title">Pernikahan Suci</h3>
+          <p class="timeline__text">Awal dari janji suci seumur hidup yang kami sambut dengan penuh syukur dan rasa bahagia.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-sep"></div>
+
+
+    <!-- ===== 5. PROFIL MEMPELAI ===== -->
+    <section class="section reveal" id="couple">
+      <h2>Mempelai</h2>
+      <p class="section-subtitle">Dua jiwa yang disatukan dalam cinta dan doa</p>
+
+      <div class="couple__grid reveal-stagger">
+        <!-- Bride -->
+        <div class="couple__card shimmer-card">
+          <div class="couple__photo-wrapper">
+            <img
+              class="couple__photo"
+              src="assets/images/zendaya.png"
+              alt="Zendaya"
+            >
+            <svg class="couple__frame-svg" viewBox="0 0 100 120">
+              <ellipse cx="50" cy="60" rx="46" ry="56" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/>
+              <ellipse cx="50" cy="60" rx="48" ry="58" fill="none" stroke="currentColor" stroke-width="0.5" stroke-dasharray="3 3" opacity="0.4"/>
+            </svg>
+          </div>
+          <h3 class="couple__name">Zendaya</h3>
+          <p class="couple__fullname">Zendaya Maree Stoermer Coleman</p>
+          <p class="couple__parents">Putri pertama dari<br>Kazembe Ajamu Coleman &amp; Claire Stoermer</p>
+        </div>
+
+        <div class="couple__ampersand">&amp;</div>
+
+        <!-- Groom -->
+        <div class="couple__card shimmer-card">
+          <div class="couple__photo-wrapper">
+            <img
+              class="couple__photo"
+              src="assets/images/tom.png"
+              alt="Tom Holland"
+            >
+            <svg class="couple__frame-svg" viewBox="0 0 100 120">
+              <ellipse cx="50" cy="60" rx="46" ry="56" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/>
+              <ellipse cx="50" cy="60" rx="48" ry="58" fill="none" stroke="currentColor" stroke-width="0.5" stroke-dasharray="3 3" opacity="0.4"/>
+            </svg>
+          </div>
+          <h3 class="couple__name">Tom</h3>
+          <p class="couple__fullname">Thomas Stanley Holland</p>
+          <p class="couple__parents">Putra kedua dari<br>Dominic Holland &amp; Nicola Frost</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-sep"></div>
+
+
+    <!-- ===== 6. DETAIL ACARA ===== -->
+    <section class="section reveal" id="events">
+      <svg class="ornament ornament--tl"><use href="#svg-botanical-corner"></use></svg>
+      <svg class="ornament ornament--br"><use href="#svg-botanical-corner"></use></svg>
+
+      <h2>Rangkaian Acara</h2>
+      <p class="section-subtitle">Merupakan suatu kehormatan atas kehadiran dan doa Anda</p>
+
+      <div class="events__grid reveal-stagger">
+        <div class="event__card shimmer-card">
+          <div class="event__icon">💍</div>
+          <h3 class="event__name">Akad Nikah</h3>
+          <p class="event__datetime">Sabtu, 24 Oktober 2026<br><strong>Pukul 08:00 — 10:00 WIB</strong></p>
+          <p class="event__location">Masjid Agung Trans Studio Bandung<br>Jl. Gatot Subroto No.289, Bandung</p>
+          
+          <div class="event__actions">
+            <a href="https://maps.google.com/?q=Masjid+Agung+Trans+Studio+Bandung" target="_blank" rel="noopener noreferrer" class="btn-maps" aria-label="Buka Google Maps lokasi Akad Nikah">Buka Maps</a>
+            <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Akad+Nikah+Zendaya+%26+Tom&dates=20261024T010000Z/20261024T030000Z&details=Akad+Nikah+Zendaya+%26+Tom&location=Masjid+Agung+Trans+Studio+Bandung" target="_blank" rel="noopener noreferrer" class="btn-cal" aria-label="Simpan ke Google Calendar">
+              <svg width="14" height="14" style="vertical-align:middle; margin-right:4px;"><use href="#svg-calendar"></use></svg>
+              Kalender
+            </a>
+          </div>
+        </div>
+
+        <div class="event__card shimmer-card">
+          <div class="event__icon">🥂</div>
+          <h3 class="event__name">Resepsi</h3>
+          <p class="event__datetime">Sabtu, 24 Oktober 2026<br><strong>Pukul 11:00 — 14:00 WIB</strong></p>
+          <p class="event__location">Gedung Sate<br>Jl. Diponegoro No.22, Bandung</p>
+
+          <div class="event__actions">
+            <a href="https://maps.google.com/?q=Gedung+Sate+Bandung" target="_blank" rel="noopener noreferrer" class="btn-maps" aria-label="Buka Google Maps lokasi Resepsi">Buka Maps</a>
+            <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Resepsi+Pernikahan+Zendaya+%26+Tom&dates=20261024T040000Z/20261024T070000Z&details=Resepsi+Pernikahan+Zendaya+%26+Tom&location=Gedung+Sate+Bandung" target="_blank" rel="noopener noreferrer" class="btn-cal" aria-label="Simpan ke Google Calendar">
+              <svg width="14" height="14" style="vertical-align:middle; margin-right:4px;"><use href="#svg-calendar"></use></svg>
+              Kalender
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-sep"></div>
+
+
+    <!-- ===== 7. PLATINUM FEATURE: DRESS CODE & GUEST GUIDELINES ===== -->
+    <section class="section reveal" id="guidelines">
+      <h2>Panduan Tamu &amp; Dress Code</h2>
+      <p class="section-subtitle">Kenyamanan Anda dalam merayakan kebahagiaan kami</p>
+
+      <div class="guidelines__card shimmer-card">
+        <div class="guideline__block">
+          <h3 class="guideline__title">Dress Code Acara</h3>
+          <p class="guideline__desc">Kami menyarankan busana bertema <strong>Royal Cream &amp; Champagne Gold</strong>.</p>
+          <div class="color-palette">
+            <span class="swatch" style="background-color:#FAF6F0;" title="Ivory Cream"></span>
+            <span class="swatch" style="background-color:#F4ECE1;" title="Soft Warm Cream"></span>
+            <span class="swatch" style="background-color:#C9A84C;" title="Champagne Gold"></span>
+            <span class="swatch" style="background-color:#9A7B1C;" title="Deep Royal Gold"></span>
+          </div>
+        </div>
+
+        <div class="guidelines__grid">
+          <div class="guideline__item">
+            <span class="guideline__icon">✨</span>
+            <h4>Protokol Senyum</h4>
+            <p>Bawa senyuman dan doa terbaik Anda untuk kedua mempelai.</p>
+          </div>
+          <div class="guideline__item">
+            <span class="guideline__icon">📸</span>
+            <h4>Foto &amp; Momen</h4>
+            <p>Tag akun kami <strong>#Tomdaya2026</strong> saat membagikan momen bahagia di media sosial.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-sep"></div>
+
+
+    <!-- ===== 8. GALERI FOTO (WITH CATEGORY TABS) ===== -->
+    <section class="section reveal" id="gallery">
+      <h2>Galeri Kenangan</h2>
+      <p class="section-subtitle">Momen indah yang menghiasi perjalanan kami</p>
+
+      <div id="circular-gallery" style="width: 100%; height: 600px; position: relative; margin-top: 2rem;"></div>
+    </section>
+
+    <div class="section-sep"></div>
+
+
+    <!-- ===== 9. RSVP FORM ===== -->
+    <section class="section reveal" id="rsvp">
+      <svg class="ornament ornament--tl"><use href="#svg-botanical-corner"></use></svg>
+      <svg class="ornament ornament--tr"><use href="#svg-botanical-corner"></use></svg>
+
+      <h2>Konfirmasi Kehadiran</h2>
+      <p class="section-subtitle">Mohon mengonfirmasi kehadiran Anda sebelum hari acara</p>
+
+      <div class="guest-count-badge mb-4" id="confirmedBadge">
+        <span class="count-number" id="confirmedCount">12</span> Tamu Telah Mengonfirmasi Kehadiran
+      </div>
+
+      <form class="rsvp__form shimmer-card" id="rsvpForm" autocomplete="off">
+        <div class="form-group">
+          <label for="rsvpName">Nama Lengkap</label>
+          <input type="text" id="rsvpName" name="name" required placeholder="Tuliskan nama Anda">
+        </div>
+        <div class="form-group">
+          <label>Konfirmasi Kehadiran</label>
+          <div class="radio-group">
+            <label><input type="radio" name="attendance" value="hadir" checked> Hadir</label>
+            <label><input type="radio" name="attendance" value="tidak"> Halangan Hadir</label>
+          </div>
+        </div>
+        <div class="form-group" id="paxGroup">
+          <label for="rsvpPax">Jumlah Tamu</label>
+          <input type="number" id="rsvpPax" name="pax" min="1" max="5" value="1">
+        </div>
+        <div class="form-group">
+          <label for="rsvpWish">Ucapan &amp; Doa Restu</label>
+          <textarea id="rsvpWish" name="wish" rows="3" placeholder="Tuliskan doa dan harapan terbaik Anda"></textarea>
+        </div>
+        <!-- TODO: Ganti handler submit ini dengan endpoint backend/Google Form asli -->
+        <button type="submit" class="btn-submit">
+          <span class="btn-ripple"></span>
+          Kirim Konfirmasi Kehadiran
+        </button>
+      </form>
+    </section>
+
+    <div class="section-sep"></div>
+
+
+    <!-- ===== 10. UCAPAN & DOA ===== -->
+    <section class="section reveal" id="wishes">
+      <h2>Ucapan &amp; Doa Restu</h2>
+      <p class="section-subtitle">Terima kasih atas segala cinta dan kebaikan yang Anda bagikan</p>
+
+      <div class="wishes__board" id="wishesBoard">
+        <!-- JS will render wishes from localStorage here -->
+      </div>
+    </section>
+
+    <div class="section-sep"></div>
+
+
+    <!-- ===== 11. PENUTUP ===== -->
+    <section class="section closing reveal" id="closing">
+      <svg class="botanical-divider" style="margin-bottom:2rem"><use href="#svg-botanical-divider"></use></svg>
+      <h2 class="closing__thanks">Terima Kasih</h2>
+      <p class="closing__message">Kehadiran dan doa restu Anda adalah kado paling berharga bagi perjalanan baru kami.</p>
+      <p class="closing__couple gold-text">Zendaya &amp; Tom</p>
+    </section>
+
+  </main>
+
+
+  <!-- Fixed Music Toggle & Audio Visualizer -->
+  <button class="music-toggle" id="musicToggle" aria-label="Putar atau matikan musik latar">
+    <div class="equalizer">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+  </button>
+
+  <!-- Background Music Track -->
+  <audio id="bgMusic" loop preload="auto"
+    src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_24a26e8486.mp3?filename=beautiful-piano-107775.mp3">
+  </audio>
+
+  <!-- Toast Notification Container -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Lightbox Popup -->
+  <div class="lightbox" id="lightbox">
+    <img class="lightbox__img" id="lightboxImg" src="" alt="Foto galeri diperbesar">
+    <button class="lightbox__close" id="lightboxClose" aria-label="Tutup foto">&times;</button>
+  </div>
+
+  <script src="script.js"></script>
+  <script type="module">
+    import './gallery.js';
+    
+    // Initialize the Circular Gallery when the DOM is ready
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('circular-gallery');
+      if (container && window.CircularGalleryApp) {
+        const items = [
+          { image: 'assets/images/image.png', text: "Zendaya & Tom" },
+          { image: 'assets/images/image copy.png', text: "Tom Holland" },
+          { image: 'assets/images/image copy 2.png', text: "Zendaya" },
+          { image: 'assets/images/image copy 3.png', text: "Momen Bahagia" },
+          { image: 'assets/images/image copy 4.png', text: "Pre-Wedding" },
+          { image: 'assets/images/image copy 5.png', text: "Selamanya" }
+        ];
+        
+        new window.CircularGalleryApp(container, {
+          items: items,
+          bend: 3,
+          textColor: "#ffffff",
+          borderRadius: 0.05,
+          font: "bold 30px 'Cormorant Garamond'"
+        });
+      }
+    });
+  </script>
+</body>
+</html>

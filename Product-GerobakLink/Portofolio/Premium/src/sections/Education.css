@@ -1,0 +1,82 @@
+.edu__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  padding: var(--space-lg) 0;
+}
+
+.edu__card {
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.edu__meta {
+  color: var(--signal-red);
+  margin-bottom: var(--space-md);
+}
+
+.edu__title {
+  margin-bottom: var(--space-xs);
+  text-transform: none; /* override default h3 */
+  line-height: 1.1;
+}
+
+.edu__institution {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+/* Faux physical stamp effect */
+.edu__stamp {
+  position: absolute;
+  bottom: var(--space-lg);
+  right: var(--space-lg);
+  width: 80px;
+  height: 80px;
+  border-radius: 50% !important;
+  border: 2px solid var(--navy-ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-15deg);
+  opacity: 0.2;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.edu__stamp--alt {
+  border-color: var(--signal-red);
+  color: var(--signal-red);
+}
+
+.edu__stamp-inner {
+  width: 70px;
+  height: 70px;
+  border-radius: 50% !important;
+  border: 1px solid currentColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.edu__stamp-inner span {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.edu__card:hover .edu__stamp {
+  opacity: 0.8;
+  transform: rotate(0deg) scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .edu__grid {
+    grid-template-columns: 1fr;
+  }
+}

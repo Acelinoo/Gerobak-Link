@@ -1,0 +1,82 @@
+.contact {
+  padding-bottom: var(--space-xl);
+}
+
+.contact__grid {
+  display: flex;
+  flex-direction: column;
+  min-height: 40vh;
+  justify-content: space-between;
+}
+
+.contact__links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+}
+
+.contact__item {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-lg);
+}
+
+.contact__num {
+  font-size: 1.5rem;
+  color: var(--signal-red);
+}
+
+.contact__link {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.contact__footer {
+  margin-top: var(--space-3xl);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-top: var(--grid-line);
+  padding-top: var(--space-md);
+}
+
+/* Easter Egg PixelTransition */
+.contact__easter-egg {
+  width: 120px;
+  height: 24px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.contact__pixel-container {
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+}
+
+.contact__egg-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--navy-ink);
+  align-self: flex-end;
+  margin-left: auto;
+}
+
+.contact__egg-msg {
+  color: var(--signal-red);
+  font-size: 0.65rem;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .contact__item {
+    flex-direction: column;
+    gap: 0;
+  }
+}

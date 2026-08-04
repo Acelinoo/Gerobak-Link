@@ -20,7 +20,7 @@ export const PACKAGES: PackageItem[] = [
     priceRange: 'MULAI RP 3.500.000',
     tags: ['Responsif', 'SEO Dasar', 'CMS Ringan'],
     surfaceColor: 'var(--navy)',
-    demoUrl: 'https://company.gerobaklink.com',
+    demoUrl: 'http://127.0.0.1:5174',
   },
   {
     id: 'kat-02',
@@ -42,7 +42,7 @@ export const PACKAGES: PackageItem[] = [
     priceRange: 'MULAI RP 450.000',
     tags: ['RSVP Online', 'Galeri Foto', 'Custom Nama'],
     surfaceColor: 'var(--rose)',
-    demoUrl: 'https://undangan.gerobaklink.com',
+    demoUrl: 'http://localhost:5175',
   },
   {
     id: 'kat-04',
@@ -53,6 +53,6 @@ export const PACKAGES: PackageItem[] = [
     priceRange: 'MULAI RP 1.800.000',
     tags: ['Studi Kasus', 'CV Interaktif', 'Personal Brand'],
     surfaceColor: 'var(--ochre)',
-    demoUrl: 'https://portofolio.gerobaklink.com',
+    demoUrl: 'http://localhost:5173',
   },
 ];
