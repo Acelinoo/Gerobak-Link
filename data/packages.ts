@@ -55,4 +55,15 @@ export const PACKAGES: PackageItem[] = [
     surfaceColor: 'var(--ochre)',
     demoUrl: 'http://localhost:5173',
   },
+  {
+    id: 'kat-05',
+    code: '02 / 04',
+    pkgTag: 'PKG.02',
+    title: 'Joki Tugas',
+    description: 'Format rapi, pengerjaan cepat, dan jaminan aman — dirancang buat bantu tugasmu beres tepat waktu, bukan asal selesai.',
+    priceRange: 'MULAI RP 150.000',
+    tags: ['Proses Cepat', 'Support Berbagai Mapel/Matkul', 'Support Berbagai Mapel/Matkul'],
+    surfaceColor: 'var(--crimson)',
+    demoUrl: 'https://store.gerobaklink.com',
+  }
 ];

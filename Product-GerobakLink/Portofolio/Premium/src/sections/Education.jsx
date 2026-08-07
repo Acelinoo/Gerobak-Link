@@ -1,42 +1,44 @@
 import ScrollReveal from '../components/ScrollReveal';
 import './Education.css';
 
+const EDUCATION_HISTORY = [
+  {
+    period: '2021 - 2024',
+    title: 'SMK Yadika Soreang',
+    description: 'Vocational High School Degree in Computer & Network Engineering. Focused on computer science fundamentals, networking, and initial web development.'
+  },
+  {
+    period: '2024 - Present',
+    title: 'Universitas Komputer Indonesia (UNIKOM)',
+    description: 'Bachelor of Computer Science in Informatics Engineering. Specializing in Software Engineering, Web System Architecture, and Distributed Systems.'
+  }
+];
+
 const Education = () => {
   return (
     <section className="section education" id="pendidikan">
-      <div className="section__header">
-        <span className="section__number">02</span>
-        <h2 className="section__title">Pendidikan & Sertifikasi</h2>
+      <div className="section-header">
+        <h2 className="section-title">Education & Qualifications</h2>
+        <p className="section-subtitle">
+          Academic background and formal education journey in computer science and software engineering.
+        </p>
       </div>
 
-      <div className="edu__grid">
-        <ScrollReveal delay={0.1}>
-          <div className="card edu__card">
-            <div className="edu__meta mono-label">Gelar Dummy</div>
-            <h3 className="edu__title">Jurusan Dummy A</h3>
-            <div className="edu__institution">Universitas Dummy Pertama</div>
-            
-            <div className="edu__stamp">
-              <div className="edu__stamp-inner">
-                <span className="mono">VERIFIED</span>
+      <div className="edu__clean-timeline">
+        <div className="edu__timeline-track" />
+        
+        {EDUCATION_HISTORY.map((item, index) => (
+          <ScrollReveal key={item.title} delay={index * 0.15}>
+            <div className="edu__clean-item">
+              <div className="edu__clean-dot" />
+              <div className="glass-card edu__clean-card">
+                <span className="edu__clean-period">{item.period}</span>
+                <h3 className="edu__clean-title">{item.title}</h3>
+                <p className="edu__clean-desc">{item.description}</p>
               </div>
             </div>
-          </div>
-        </ScrollReveal>
-
-        <ScrollReveal delay={0.3}>
-          <div className="card edu__card">
-            <div className="edu__meta mono-label">Sertifikasi Dummy</div>
-            <h3 className="edu__title">Modul Kursus Dummy B</h3>
-            <div className="edu__institution">Lembaga Sertifikasi Dummy</div>
-            
-            <div className="edu__stamp edu__stamp--alt">
-              <div className="edu__stamp-inner">
-                <span className="mono">PASSED</span>
-              </div>
-            </div>
-          </div>
-        </ScrollReveal>
+          </ScrollReveal>
+        ))}
       </div>
     </section>
   );

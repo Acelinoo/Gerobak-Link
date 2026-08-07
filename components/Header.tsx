@@ -37,6 +37,11 @@ export default function Header() {
                 Ulasan
               </a>
             </li>
+            <li>
+              <a href="#faq" data-cursor="GO">
+                FAQ
+              </a>
+            </li>
           </ul>
         </nav>
         <a href="#cta" className="btn btn-primary" data-cursor="PILIH">

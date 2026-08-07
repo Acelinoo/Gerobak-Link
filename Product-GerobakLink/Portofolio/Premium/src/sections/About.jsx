@@ -1,52 +1,72 @@
 import ScrollReveal from '../components/ScrollReveal';
-import acelinoImg from '../assets/acelino.png';
+import Lanyard from '../components/Lanyard';
+import { ShieldCheck, Cpu, Zap, Layout } from 'lucide-react';
 import './About.css';
+
+const PRINCIPLES = [
+  {
+    icon: <Cpu size={22} />,
+    title: 'Clean & Modular Architecture',
+    desc: 'Well-structured, maintainable code adhering to industry-standard software engineering patterns.'
+  },
+  {
+    icon: <Zap size={22} />,
+    title: 'High Performance & Speed',
+    desc: 'Page load optimization under 1 second, bundle efficiency, and high-performance algorithm execution.'
+  },
+  {
+    icon: <Layout size={22} />,
+    title: 'Minimalist & Intuitive UX',
+    desc: 'Clean user interface development focused on seamless navigation and accessibility.'
+  },
+  {
+    icon: <ShieldCheck size={22} />,
+    title: 'Robust Code & Security',
+    desc: 'Strict data validation implementation, OWASP security architecture, and continuous testing.'
+  }
+];
 
 const About = () => {
   return (
     <section className="section about" id="tentang">
-      <div className="section__header">
-        <span className="section__number">01</span>
-        <h2 className="section__title">Tentang Saya</h2>
+      <div className="section-header">
+        <h2 className="section-title">About Me</h2>
+        <p className="section-subtitle">
+          Combining software engineering precision with modern minimalist design principles to build robust web applications.
+        </p>
       </div>
 
       <div className="about__grid">
-        <div className="about__spec-sheet">
-          <div className="about__spec-row">
-            <div className="about__spec-label mono-label">Status</div>
-            <div className="about__spec-value mono text-red">Aktif / Available</div>
-          </div>
-          <div className="about__spec-row">
-            <div className="about__spec-label mono-label">Fokus</div>
-            <div className="about__spec-value">Engineering UI/UX, Backend System</div>
-          </div>
-          <div className="about__spec-row">
-            <div className="about__spec-label mono-label">Lokasi</div>
-            <div className="about__spec-value">Indonesia</div>
-          </div>
-          <div className="about__photo-wrapper">
-            <img src={acelinoImg} alt="Marchelino Kurniawan" className="about__photo" />
-          </div>
-        </div>
+        <ScrollReveal delay={0.1}>
+          <Lanyard />
+        </ScrollReveal>
 
-        <div className="about__content">
-          <ScrollReveal delay={0.1}>
-            <p className="about__text">
-              Saya adalah seorang Web Developer dengan latar belakang pendidikan dari Universitas Dummy. Saya memiliki passion kuat dalam menerjemahkan kompleksitas bisnis menjadi sistem informasi yang intuitif dan efisien.
-            </p>
-          </ScrollReveal>
-          
+        <div className="about__narrative">
           <ScrollReveal delay={0.2}>
+            <h3 className="about__heading">
+              Engineering Precision × Technical Excellence
+            </h3>
             <p className="about__text">
-              Pendekatan saya terhadap pengembangan web berakar pada <strong>"Engineering Precision"</strong>. Saya percaya bahwa antarmuka yang hebat bukan hanya tentang estetika, melainkan tentang struktur yang kokoh, aksesibilitas, dan performa yang optimal di bawah beban kerja produksi.
+              I am a Software Developer with an academic background in Computer Science. I am deeply passionate about designing and building efficient, scalable web application architectures.
+            </p>
+            <p className="about__text">
+              My software engineering approach is driven by <strong>"Engineering Precision"</strong>. I believe high-quality web applications are defined not only by visual aesthetics, but also by clean code structures, high performance under heavy loads, and intuitive user experiences.
             </p>
           </ScrollReveal>
 
-          <ScrollReveal delay={0.3}>
-            <p className="about__text">
-              Dengan pengalaman menangani siklus penuh pengembangan perangkat lunak—mulai dari analisis kebutuhan, perancangan arsitektur, hingga implementasi <em>clean code</em> di sisi frontend dan backend—saya siap membangun solusi digital yang berskala.
-            </p>
-          </ScrollReveal>
+          <div className="about__principles-grid">
+            {PRINCIPLES.map((item, index) => (
+              <ScrollReveal key={item.title} delay={0.3 + index * 0.1}>
+                <div className="principle-card">
+                  <div className="principle-icon">{item.icon}</div>
+                  <div>
+                    <h4 className="principle-title">{item.title}</h4>
+                    <p className="principle-desc">{item.desc}</p>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
         </div>
       </div>
     </section>

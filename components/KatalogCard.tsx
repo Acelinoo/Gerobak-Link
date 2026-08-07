@@ -57,7 +57,6 @@ export default function KatalogCard({ item, isReverse = false }: KatalogCardProp
                 top: 0, left: 0,
                 width: '100%', 
                 height: '100%', 
-                objectFit: 'cover',
                 pointerEvents: 'none'
               }}
               alt={item.title}
@@ -78,7 +77,6 @@ export default function KatalogCard({ item, isReverse = false }: KatalogCardProp
                 top: 0, left: 0,
                 width: '100%', 
                 height: '100%', 
-                objectFit: 'cover',
                 pointerEvents: 'none'
               }}
               alt={item.title}
@@ -90,7 +88,7 @@ export default function KatalogCard({ item, isReverse = false }: KatalogCardProp
             top: 0, left: 0, right: 0, bottom: 0,
             zIndex: 0,
             overflow: 'hidden',
-            backgroundColor: '#0a0a0a',
+            backgroundColor: '#FAFAFA',
           }}>
             <img 
               src="/portofolio.png" 
@@ -99,7 +97,6 @@ export default function KatalogCard({ item, isReverse = false }: KatalogCardProp
                 top: 0, left: 0,
                 width: '100%', 
                 height: '100%', 
-                objectFit: 'cover',
                 pointerEvents: 'none'
               }}
               alt={item.title}

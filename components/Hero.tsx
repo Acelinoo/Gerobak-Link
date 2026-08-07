@@ -6,9 +6,9 @@ export default function Hero() {
       <div className="hero-grid-lines" aria-hidden="true" />
       <div className="wrap">
         <div className="eyebrow">Studio Desain &amp; Development Web</div>
-        <h1 className="hero-head">Satu studio. Empat cara hadir online.</h1>
+        <h1 className="hero-head">Satu Tempat Buat Semua Kebutuhan Digitalmu.</h1>
         <p className="hero-sub">
-          GerobakLink merancang dan membangun website untuk empat kebutuhan yang paling sering dicari — profil perusahaan, toko online, undangan digital, dan portofolio pribadi. Tiap tipe punya sistem desainnya sendiri, dikerjakan dengan standar presisi yang sama.
+          GerobakLink merancang dan membangun website untuk empat kebutuhan yang paling sering dicari — profil perusahaan, toko online, undangan digital, joki tugas, dan portofolio pribadi. Tiap tipe punya sistem desainnya sendiri, dikerjakan dengan standar presisi yang sama.
         </p>
 
         <div className="hero-actions">
