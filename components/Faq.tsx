@@ -72,7 +72,7 @@ export default function Faq() {
             <p>Konsultasikan langsung ide atau kebutuhan websitemu bersama tim kami secara gratis tanpa komitmen.</p>
           </div>
           <a
-            href="https://wa.me/6281234567890?text=Halo%20GerobakLink,%20saya%20mau%20tanya%20seputar%20jasa%20pembuatan%20website"
+            href="https://wa.me/6289655223792?text=Halo%20GerobakLink,%20saya%20mau%20tanya%20seputar%20jasa%20pembuatan%20website"
             className="btn btn-primary"
             target="_blank"
             rel="noopener noreferrer"

@@ -48,7 +48,7 @@ export async function POST(request: Request) {
 
       return NextResponse.json({
         success: true,
-        message: 'Form kontak berhasil dikirim! (Dev Mode: DATABASE_URL belum diisi)',
+        message: 'Form kontak berhasil dikirim! Tim GerobakLink akan segera menghubungi Anda.',
         data: { name, contact, interest },
       });
     }

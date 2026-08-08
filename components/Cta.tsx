@@ -82,7 +82,7 @@ export default function Cta() {
               <h3>Konsultasi Langsung via WhatsApp</h3>
               <p>Respon lebih cepat untuk diskusi santai mengenai gambaran situsmu.</p>
               <a
-                href="https://wa.me/6281234567890?text=Halo%20GerobakLink,%20saya%20ingin%20konsultasi%20pembuatan%20website"
+                href="https://wa.me/6289655223792?text=Halo%20GerobakLink,%20saya%20ingin%20konsultasi%20pembuatan%20website"
                 className="btn btn-primary"
                 data-cursor="MULAI"
                 target="_blank"
@@ -121,7 +121,7 @@ export default function Cta() {
                   id="contact"
                   name="contact"
                   className="form-input"
-                  placeholder="Email atau 0812..."
+                  placeholder="Email atau 0896..."
                   required
                   value={formData.contact}
                   onChange={handleChange}
@@ -143,6 +143,8 @@ export default function Cta() {
                   <option value="Toko Online">Toko Online (PKG.02)</option>
                   <option value="Undangan Digital">Undangan Digital (PKG.03)</option>
                   <option value="Portofolio">Portofolio (PKG.04)</option>
+                  <option value="Web Pendidikan">Web Pendidikan (PKG.05)</option>
+                  <option value="Joki Tugas">Joki Tugas (PKG.06)</option>
                   <option value="Belum Yakin / Lainnya">Belum Yakin / Konsultasi Dulu</option>
                 </select>
               </div>

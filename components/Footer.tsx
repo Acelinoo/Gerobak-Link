@@ -15,7 +15,7 @@ export default function Footer() {
             Instagram
           </a>
           <a
-            href="https://wa.me/6281234567890"
+            href="https://wa.me/6289655223792"
             data-cursor="WA"
             target="_blank"
             rel="noopener noreferrer"

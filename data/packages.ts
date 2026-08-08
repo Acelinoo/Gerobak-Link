@@ -20,7 +20,7 @@ export const PACKAGES: PackageItem[] = [
     priceRange: 'MULAI RP 3.500.000',
     tags: ['Responsif', 'SEO Dasar', 'CMS Ringan'],
     surfaceColor: 'var(--navy)',
-    demoUrl: 'http://127.0.0.1:5174',
+    demoUrl: 'https://wa.me/6289655223792?text=Halo%20GerobakLink,%20saya%20ingin%20konsultasi%20paket%20Company%20Profile',
   },
   {
     id: 'kat-02',
@@ -31,7 +31,7 @@ export const PACKAGES: PackageItem[] = [
     priceRange: 'MULAI RP 5.000.000',
     tags: ['Payment Gateway', 'Manajemen Stok', 'Multi Produk'],
     surfaceColor: 'var(--crimson)',
-    demoUrl: 'https://store.gerobaklink.com',
+    demoUrl: 'https://wa.me/6289655223792?text=Halo%20GerobakLink,%20saya%20ingin%20konsultasi%20paket%20Toko%20Online',
   },
   {
     id: 'kat-03',
@@ -42,7 +42,7 @@ export const PACKAGES: PackageItem[] = [
     priceRange: 'MULAI RP 450.000',
     tags: ['RSVP Online', 'Galeri Foto', 'Custom Nama'],
     surfaceColor: 'var(--rose)',
-    demoUrl: 'http://localhost:5175',
+    demoUrl: 'https://wa.me/6289655223792?text=Halo%20GerobakLink,%20saya%20ingin%20konsultasi%20paket%20Undangan%20Digital',
   },
   {
     id: 'kat-04',
@@ -53,18 +53,18 @@ export const PACKAGES: PackageItem[] = [
     priceRange: 'MULAI RP 1.800.000',
     tags: ['Studi Kasus', 'CV Interaktif', 'Personal Brand'],
     surfaceColor: 'var(--ochre)',
-    demoUrl: 'http://localhost:5173',
+    demoUrl: 'https://wa.me/6289655223792?text=Halo%20GerobakLink,%20saya%20ingin%20konsultasi%20paket%20Portofolio',
   },
   {
     id: 'kat-05',
     code: '05 / 06',
     pkgTag: 'PKG.05',
     title: 'Web Pendidikan',
-    description: 'Website pendidikan dirancang yang dirancang modern agar membantu sekolah memberikan layanan digital secara profesional. Cocok untuk portal sekolah, sistem informasi akademik, SIMAK, PPDB Online, dan kebutuhan administrasi lainnya. ',
-    priceRange: '1.200.000',
-    tags: ['Portal sekolah profesionak', 'akademik dalam satu sistem', 'Mudah digunakan untuk Admin, Guru, Siswa.'],
-    surfaceColor: 'var(--crimson)',
-    demoUrl: 'https://store.gerobaklink.com',
+    description: 'Website pendidikan modern untuk sekolah & institusi — portal sekolah, SIMAK, PPDB Online, dan administrasi akademik.',
+    priceRange: 'MULAI RP 1.200.000',
+    tags: ['Portal Sekolah', 'Akademik Terintegrasi', 'Mudah Digunakan'],
+    surfaceColor: 'var(--navy)',
+    demoUrl: 'https://wa.me/6289655223792?text=Halo%20GerobakLink,%20saya%20ingin%20konsultasi%20paket%20Web%20Pendidikan',
   },
   {
     id: 'kat-06',
@@ -75,6 +75,6 @@ export const PACKAGES: PackageItem[] = [
     priceRange: 'MULAI RP 150.000',
     tags: ['Proses Cepat', 'Support Berbagai Mapel/Matkul'],
     surfaceColor: 'var(--crimson)',
-    demoUrl: 'https://store.gerobaklink.com',
+    demoUrl: 'https://wa.me/6289655223792?text=Halo%20GerobakLink,%20saya%20ingin%20konsultasi%20Joki%20Tugas',
   }
 ];
