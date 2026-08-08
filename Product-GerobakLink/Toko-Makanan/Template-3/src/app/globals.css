@@ -57,3 +57,36 @@
 .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: theme('colors.stone'); }
 .scrollbar-hide::-webkit-scrollbar { display: none; }
 .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ─── WhatsApp Floating Button Pulse ─── */
+@keyframes wa-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
+  50% { box-shadow: 0 0 0 12px rgba(37, 211, 102, 0); }
+}
+.wa-float-pulse {
+  animation: wa-pulse 2s ease-in-out infinite;
+}
+
+/* ─── Smooth Focus States ─── */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ─── Footer Link Underline ─── */
+.footer-link {
+  position: relative;
+  display: inline-block;
+}
+.footer-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: theme('colors.sage');
+  transition: width 0.3s ease;
+}
+.footer-link:hover::after {
+  width: 100%;
+}

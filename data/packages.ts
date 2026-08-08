@@ -13,7 +13,7 @@ export interface PackageItem {
 export const PACKAGES: PackageItem[] = [
   {
     id: 'kat-01',
-    code: '01 / 04',
+    code: '01 / 06',
     pkgTag: 'PKG.01',
     title: 'Company Profile',
     description: 'Untuk bisnis yang butuh tampil kredibel — profil, layanan, tim, dan kontak, tersusun rapi dan cepat diakses.',
@@ -24,7 +24,7 @@ export const PACKAGES: PackageItem[] = [
   },
   {
     id: 'kat-02',
-    code: '02 / 04',
+    code: '02 / 06',
     pkgTag: 'PKG.02',
     title: 'Toko Online',
     description: 'Katalog produk, keranjang, checkout, dan integrasi pembayaran — dibangun untuk konversi, bukan cuma tampil.',
@@ -35,7 +35,7 @@ export const PACKAGES: PackageItem[] = [
   },
   {
     id: 'kat-03',
-    code: '03 / 04',
+    code: '03 / 06',
     pkgTag: 'PKG.03',
     title: 'Undangan Digital',
     description: 'Undangan pernikahan atau acara dengan nuansa personal, RSVP, galeri, dan musik — elegan tanpa terasa template.',
@@ -46,7 +46,7 @@ export const PACKAGES: PackageItem[] = [
   },
   {
     id: 'kat-04',
-    code: '04 / 04',
+    code: '04 / 06',
     pkgTag: 'PKG.04',
     title: 'Portofolio',
     description: 'Untuk individu kreatif — karya, studi kasus, dan identitas personal yang mudah diingat orang lain.',
@@ -57,12 +57,23 @@ export const PACKAGES: PackageItem[] = [
   },
   {
     id: 'kat-05',
-    code: '02 / 04',
-    pkgTag: 'PKG.02',
+    code: '05 / 06',
+    pkgTag: 'PKG.05',
+    title: 'Web Pendidikan',
+    description: 'Website pendidikan dirancang yang dirancang modern agar membantu sekolah memberikan layanan digital secara profesional. Cocok untuk portal sekolah, sistem informasi akademik, SIMAK, PPDB Online, dan kebutuhan administrasi lainnya. ',
+    priceRange: '1.200.000',
+    tags: ['Portal sekolah profesionak', 'akademik dalam satu sistem', 'Mudah digunakan untuk Admin, Guru, Siswa.'],
+    surfaceColor: 'var(--crimson)',
+    demoUrl: 'https://store.gerobaklink.com',
+  },
+  {
+    id: 'kat-06',
+    code: '06 / 06',
+    pkgTag: 'PKG.06',
     title: 'Joki Tugas',
     description: 'Format rapi, pengerjaan cepat, dan jaminan aman — dirancang buat bantu tugasmu beres tepat waktu, bukan asal selesai.',
     priceRange: 'MULAI RP 150.000',
-    tags: ['Proses Cepat', 'Support Berbagai Mapel/Matkul', 'Support Berbagai Mapel/Matkul'],
+    tags: ['Proses Cepat', 'Support Berbagai Mapel/Matkul'],
     surfaceColor: 'var(--crimson)',
     demoUrl: 'https://store.gerobaklink.com',
   }

@@ -179,7 +179,7 @@
     margin-top:96px;
     border-top:1px solid var(--line);
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+    grid-template-columns:repeat(6,1fr);
   }
   .index-ruler a{
     padding:18px 4px 0;
@@ -334,7 +334,8 @@
     .wrap{padding:0 22px;}
     section{padding:90px 0;}
     .index-ruler{grid-template-columns:1fr 1fr;}
-    .index-ruler a:nth-child(3){border-left:none;}
+    .index-ruler a:nth-child(odd){border-left:none;}
+    .index-ruler a:nth-child(even){border-left:1px solid var(--line);}
   }
 </style>
 </head>
@@ -375,6 +376,8 @@
           <a href="#kat-02" data-cursor="02"><b>02 · Toko</b>Toko Online</a>
           <a href="#kat-03" data-cursor="03"><b>03 · Undangan</b>Undangan Digital</a>
           <a href="#kat-04" data-cursor="04"><b>04 · Karya</b>Portofolio</a>
+          <a href="#kat-05" data-cursor="05"><b>05 · Pendidikan</b>Web Pendidikan</a>
+          <a href="#kat-06" data-cursor="06"><b>06 · Joki Tugas</b>Tugas Kuliah/Sekolah/Kantor</a>
         </div>
       </div>
       <div class="scroll-cue"><i></i>Scroll</div>

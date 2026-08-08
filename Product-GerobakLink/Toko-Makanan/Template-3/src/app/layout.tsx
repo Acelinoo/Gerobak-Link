@@ -7,8 +7,16 @@ const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfa
 
 export const metadata: Metadata = {
   title: "Kopi Tenang Jiwa — Seduh perlahan, nikmati detik ini.",
-  description: "Coffee shop minimalis dengan nuansa menenangkan. Pesan kopi susu, matcha, dan croissant premium.",
-  keywords: ["Kopi Tenang Jiwa", "Coffee Shop", "Bandung", "Kopi Susu", "Matcha", "Croissant"],
+  description: "Coffee shop minimalis dengan nuansa menenangkan di Bandung. Pesan kopi susu, matcha, croissant, dan pastry premium. Buka 24 jam setiap hari.",
+  keywords: ["Kopi Tenang Jiwa", "Coffee Shop", "Bandung", "Kopi Susu", "Matcha", "Croissant", "Kopi Bandung", "Cafe 24 Jam"],
+  robots: "index, follow",
+  openGraph: {
+    title: "Kopi Tenang Jiwa — Seduh perlahan, nikmati detik ini.",
+    description: "Coffee shop minimalis dengan nuansa menenangkan di Bandung. Pesan kopi susu, matcha, croissant, dan pastry premium. Buka 24 jam.",
+    type: "website",
+    locale: "id_ID",
+    siteName: "Kopi Tenang Jiwa",
+  },
 };
 
 export default function RootLayout({

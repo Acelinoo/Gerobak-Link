@@ -6,7 +6,8 @@ import {
   ShoppingBag, Search, X, Plus, Minus,
   Coffee, MessageSquare, Phone,
   Copy, Check, ChevronRight,
-  Package, MapPin, Ticket, Leaf, Clock, Gift
+  Package, MapPin, Ticket, Leaf, Clock, Gift,
+  Instagram, Star, Heart, Send
 } from "lucide-react";
 import { MenuItem, CartItem, VoucherConfig } from "@/lib/types";
 
@@ -74,6 +75,49 @@ const REAL_MENU: MenuItem[] = [
     isAvailable: true,
     moods: ["Lagi Badmood", "Laper Dikit"],
   },
+  {
+    id: 5,
+    name: "Americano Klasik",
+    description: "Double shot espresso dengan air panas, memberikan rasa kopi murni yang kuat dan clean.",
+    price: 15000,
+    image: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefda?auto=format&fit=crop&q=80&w=600",
+    category: "kopi",
+    isAvailable: true,
+    customVariants: ["Dingin", "Hangat"],
+    moods: ["Ngantuk Berat"],
+  },
+  {
+    id: 6,
+    name: "Taro Velvet Latte",
+    description: "Perpaduan taro premium dengan susu segar dan hint vanilla yang lembut.",
+    price: 20000,
+    image: "https://images.unsplash.com/photo-1628088062854-d1870b4553da?auto=format&fit=crop&q=80&w=600",
+    category: "non-kopi",
+    isAvailable: true,
+    customVariants: ["Less Sugar", "Normal Sweet"],
+    moods: ["Lagi Badmood", "Butuh Nyantai"],
+  },
+  {
+    id: 7,
+    name: "Caramel Macchiato",
+    description: "Espresso lembut bertemu susu creamy dan drizzle caramel manis yang menggoda.",
+    price: 24000,
+    image: "https://images.unsplash.com/photo-1485808191679-5f86510681a2?auto=format&fit=crop&q=80&w=600",
+    category: "kopi",
+    isAvailable: true,
+    customVariants: ["Dingin", "Hangat"],
+    moods: ["Butuh Nyantai", "Lagi Badmood"],
+  },
+  {
+    id: 8,
+    name: "Chocolate Banana Toast",
+    description: "Roti panggang renyah dengan selai cokelat premium dan irisan pisang segar.",
+    price: 16000,
+    image: "https://images.unsplash.com/photo-1484723091739-30a097e8f929?auto=format&fit=crop&q=80&w=600",
+    category: "cemilan",
+    isAvailable: true,
+    moods: ["Laper Dikit", "Lagi Badmood"],
+  },
 ];
 
 // ─── Constants ───────────────────────────────────────────────────────────
@@ -135,8 +179,9 @@ export default function Template3() {
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("All");
   const [selectedMood, setSelectedMood] = useState<string | null>(null);
-  
+
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isMobileSearchOpen, setIsMobileSearchOpen] = useState(false);
   const [deliveryMethod, setDeliveryMethod] = useState("Dine In");
   const [dineInOption, setDineInOption] = useState("Scan Barcode Meja");
   const [tableNumber, setTableNumber] = useState("");
@@ -169,7 +214,14 @@ export default function Template3() {
 
   // ── Load Data ──
   useEffect(() => {
+    const isPlaceholderAPI = SHEETDB_API_URL.includes("YOUR_API_ID");
+
     const loadMenu = async () => {
+      if (isPlaceholderAPI) {
+        setItems(REAL_MENU);
+        setLoading(false);
+        return;
+      }
       try {
         const res = await fetch(`${SHEETDB_API_URL}`, { signal: AbortSignal.timeout(5000) });
         if (!res.ok) throw new Error("fail");
@@ -182,6 +234,7 @@ export default function Template3() {
     };
 
     const loadVoucher = async () => {
+      if (isPlaceholderAPI) return;
       try {
         const res = await fetch(`${SHEETDB_API_URL}?sheet=config`, { signal: AbortSignal.timeout(5000) });
         if (!res.ok) throw new Error("fail");
@@ -199,7 +252,8 @@ export default function Template3() {
       } catch { /* silent fallback */ }
     };
 
-    setTimeout(() => { loadMenu(); loadVoucher(); }, 800);
+    loadMenu();
+    loadVoucher();
   }, []);
 
   useEffect(() => {
@@ -277,7 +331,7 @@ export default function Template3() {
     if (cart.length === 0) return alert("Keranjang kosong!");
     if (deliveryMethod === "Dine In" && dineInOption === "Scan Barcode Meja" && !tableNumber.trim()) return alert("Mohon isi Nomor Meja!");
     if (isGift && !giftNote.trim()) return alert("Mohon isi pesan hadiah!");
-    
+
     // Generate Invoice Code Here
     setInvoiceCode(generateInvoiceCode());
     setIsConfirmOpen(true);
@@ -298,7 +352,7 @@ export default function Template3() {
       if (i.variant) msg += `  [${i.variant}]\n`;
       if (i.notes) msg += `  *Note: ${i.notes}*\n`;
     });
-    
+
     msg += `\n*Metode:* ${deliveryMethod}`;
     if (deliveryMethod === "Dine In") {
       msg += `\n*Opsi:* ${dineInOption}`;
@@ -306,14 +360,14 @@ export default function Template3() {
     }
     if (deliveryMethod === "Take Away / Pick-Up" && pickupTime) msg += ` (Jam: ${pickupTime})`;
     msg += `\n`;
-    
+
     if (isGift) {
       msg += `\n🎁 *Hadiah & Pesan:* "${giftNote}"\n`;
     }
     if (voucherApplied) {
       msg += `\n*Voucher:* ${voucherConfig.voucherCode} (-${voucherConfig.voucherDiscount}%)\n`;
     }
-    
+
     msg += `\n*Pembayaran:* ${paymentMethod}\n*TOTAL AKHIR:* ${formatRupiah(total)}\n\nTerima kasih!`;
     window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`, "_blank");
     setIsSuccessModalOpen(false);
@@ -334,13 +388,19 @@ export default function Template3() {
       <header className="sticky top-0 z-40 glass-panel border-b-0 border-latte/30">
         <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
           <h1 className="text-xl md:text-2xl font-serif text-charcoal tracking-wide">Kopi Tenang Jiwa.</h1>
-          <div className="flex gap-4 items-center">
+          <div className="flex gap-3 items-center">
             <div className="hidden md:flex relative">
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-stone w-4 h-4" />
               <input type="text" placeholder="Cari menu..." value={search} onChange={(e) => setSearch(e.target.value)}
                 className="input-elegant pl-11 py-2 w-64 rounded-full text-sm bg-white/50 backdrop-blur-md"
               />
             </div>
+            {/* Mobile Search Button */}
+            <motion.button onClick={() => setIsMobileSearchOpen(!isMobileSearchOpen)} whileTap={{ scale: 0.95 }}
+              className="md:hidden p-3 rounded-full bg-white border border-latte text-charcoal hover:border-sage hover:text-sage transition-all duration-300 shadow-sm"
+            >
+              <Search className="w-5 h-5" />
+            </motion.button>
             <motion.button onClick={() => setIsCartOpen(true)} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
               className="relative p-3 rounded-full bg-white border border-latte text-charcoal hover:border-sage hover:text-sage transition-all duration-300 shadow-sm"
             >
@@ -355,6 +415,21 @@ export default function Template3() {
             </motion.button>
           </div>
         </div>
+        {/* Mobile Search Bar */}
+        <AnimatePresence>
+          {isMobileSearchOpen && (
+            <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="md:hidden overflow-hidden border-t border-latte/30">
+              <div className="px-6 py-3 bg-white/50 backdrop-blur-md">
+                <div className="relative">
+                  <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-stone w-4 h-4" />
+                  <input type="text" placeholder="Cari menu favoritmu..." value={search} onChange={(e) => setSearch(e.target.value)}
+                    className="input-elegant pl-11 py-2.5 w-full rounded-full text-sm" autoFocus
+                  />
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </header>
 
       <main className="max-w-6xl mx-auto px-6 pt-12 pb-24 relative z-10">
@@ -368,10 +443,10 @@ export default function Template3() {
               <Leaf className="w-3.5 h-3.5" /><span>Biji kopi pilihan Nusantara</span>
             </motion.div>
             <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-charcoal leading-tight mb-6">
-              Nikmati detik ini,<br /><span className="text-sage">seduh perlahan.</span>
+              Sruput kopinya,<br /><span className="text-sage">-nikmati harinya.</span>
             </h2>
             <p className="text-stone text-lg mb-8 font-light">
-              Rasakan ketenangan di setiap tegukan. Kami menyajikan kopi dan pastry premium dengan suasana yang menenangkan jiwa.
+              Rasakan ketenangan di setiap tegukan. <br /> Kami menyajikan kopi dan pastry premium dengan <br /> suasana yang menenangkan jiwa.
             </p>
           </div>
           <motion.img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&q=80&w=800" alt="Kopi Tenang Jiwa"
@@ -389,9 +464,8 @@ export default function Template3() {
           <div className="flex flex-wrap justify-center gap-3">
             {moodsList.map(mood => (
               <motion.button key={mood} whileTap={{ scale: 0.95 }} onClick={() => setSelectedMood(selectedMood === mood ? null : mood)}
-                className={`px-5 py-2.5 rounded-full text-sm transition-all duration-300 ${
-                  selectedMood === mood ? "bg-sage text-white shadow-soft-glow" : "bg-white border border-latte text-charcoal hover:bg-bone"
-                }`}
+                className={`px-5 py-2.5 rounded-full text-sm transition-all duration-300 ${selectedMood === mood ? "bg-sage text-white shadow-soft-glow" : "bg-white border border-latte text-charcoal hover:bg-bone"
+                  }`}
               >{mood}</motion.button>
             ))}
           </div>
@@ -399,6 +473,13 @@ export default function Template3() {
 
         {/* Combo Builder (Paket Santai) */}
         <motion.section initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-20">
+          <div className="text-center mb-8">
+            <div className="inline-flex items-center gap-2 bg-sage/10 px-4 py-1.5 rounded-full text-xs text-sage font-medium mb-4">
+              <Package className="w-3.5 h-3.5" /><span>Lebih Hemat!</span>
+            </div>
+            <h3 className="font-serif text-2xl md:text-3xl text-charcoal mb-2">Paket Santai</h3>
+            <p className="text-stone text-sm">Pilih 1 minuman + 1 pastry, langsung hemat {formatRupiah(COMBO_DISCOUNT)}!</p>
+          </div>
           <div className="bg-white rounded-3xl p-6 md:p-8 shadow-elegant border border-latte/50 flex flex-col md:flex-row gap-8">
             <div className="flex-1 space-y-4">
               <p className="text-xs font-medium text-stone uppercase tracking-widest pl-2">1: Minuman</p>
@@ -450,9 +531,8 @@ export default function Template3() {
         <div className="flex gap-3 overflow-x-auto scrollbar-hide mb-10 pb-2">
           {categories.map((c) => (
             <button key={c.key} onClick={() => { setCategory(c.key); setSelectedMood(null); }}
-              className={`flex items-center gap-2 px-6 py-3 rounded-full whitespace-nowrap text-sm transition-all duration-300 ${
-                category === c.key && !selectedMood ? "bg-charcoal text-white shadow-elegant" : "bg-white border border-latte text-charcoal hover:bg-bone"
-              }`}
+              className={`flex items-center gap-2 px-6 py-3 rounded-full whitespace-nowrap text-sm transition-all duration-300 ${category === c.key && !selectedMood ? "bg-charcoal text-white shadow-elegant" : "bg-white border border-latte text-charcoal hover:bg-bone"
+                }`}
             >
               <span className="opacity-70">{c.icon}</span> {c.label}
             </button>
@@ -487,7 +567,7 @@ export default function Template3() {
                     <div className="p-6 flex flex-col flex-1">
                       <h4 className="font-serif text-lg text-charcoal mb-2 group-hover:text-sage transition-colors">{item.name}</h4>
                       <p className="text-sm text-stone mb-4 font-light leading-relaxed line-clamp-2">{item.description}</p>
-                      
+
                       {variantOptions.length > 0 && isAvail && (
                         <div className="mb-4 flex gap-2 flex-wrap">
                           {variantOptions.map((opt) => (
@@ -512,6 +592,64 @@ export default function Template3() {
           </motion.div>
         )}
       </main>
+
+      {/* Footer */}
+      <footer className="bg-charcoal text-bone/80 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-charcoal to-black/30 pointer-events-none" />
+        <div className="max-w-6xl mx-auto px-6 py-16 relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+            {/* Brand */}
+            <div>
+              <h3 className="font-serif text-2xl text-bone mb-4">Kopi Tenang Jiwa.</h3>
+              <p className="text-bone/60 text-sm leading-relaxed mb-6">{BRAND_TAGLINE}</p>
+              <div className="flex gap-3">
+                <a href="#" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-bone/10 border border-bone/20 flex items-center justify-center text-bone/60 hover:bg-sage hover:text-white hover:border-sage transition-all duration-300">
+                  <Instagram className="w-4 h-4" />
+                </a>
+                <a href={`https://wa.me/${WA_NUMBER}`} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-bone/10 border border-bone/20 flex items-center justify-center text-bone/60 hover:bg-sage hover:text-white hover:border-sage transition-all duration-300">
+                  <Phone className="w-4 h-4" />
+                </a>
+              </div>
+            </div>
+
+            {/* Info */}
+            <div>
+              <h4 className="text-bone font-medium text-sm uppercase tracking-widest mb-4">Informasi</h4>
+              <ul className="space-y-3 text-sm text-bone/60">
+                <li className="flex items-start gap-3">
+                  <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0 text-sage" />
+                  <span>{BRAND_ADDRESS}</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Clock className="w-4 h-4 mt-0.5 flex-shrink-0 text-sage" />
+                  <span>Buka 24 Jam — Setiap Hari</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Phone className="w-4 h-4 mt-0.5 flex-shrink-0 text-sage" />
+                  <span>+62 896-5522-3792</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Menu Cepat */}
+            <div>
+              <h4 className="text-bone font-medium text-sm uppercase tracking-widest mb-4">Menu Populer</h4>
+              <ul className="space-y-3 text-sm text-bone/60">
+                <li className="flex items-center gap-2 hover:text-sage transition-colors cursor-default"><Coffee className="w-3 h-3 text-sage" /> Kopi Susu Tenang Jiwa</li>
+                <li className="flex items-center gap-2 hover:text-sage transition-colors cursor-default"><Coffee className="w-3 h-3 text-sage" /> Caramel Macchiato</li>
+                <li className="flex items-center gap-2 hover:text-sage transition-colors cursor-default"><Leaf className="w-3 h-3 text-sage" /> Matcha Cream Latte</li>
+                <li className="flex items-center gap-2 hover:text-sage transition-colors cursor-default"><Package className="w-3 h-3 text-sage" /> Butter Croissant</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Bottom Bar */}
+          <div className="border-t border-bone/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+            <p className="text-xs text-bone/40">&copy; {new Date().getFullYear()} {BRAND_NAME}. All rights reserved.</p>
+            <p className="text-xs text-bone/40">Powered by <a href="https://gerobaklink.com" target="_blank" rel="noopener noreferrer" className="text-sage hover:text-sage/80 transition-colors font-medium">GerobakLink</a></p>
+          </div>
+        </div>
+      </footer>
 
       {/* Cart Drawer Overlay */}
       <AnimatePresence>
@@ -547,7 +685,25 @@ export default function Template3() {
                           <p className="text-charcoal font-medium text-sm mt-1">{formatRupiah(item.price * item.quantity)}</p>
                         </div>
                       </div>
-                      <div className="flex items-center justify-between mt-3">
+                      {/* Cart Variant Selector */}
+                      {getVariantOptions(item).length > 0 && (
+                        <div className="flex gap-1.5 flex-wrap mb-3">
+                          {getVariantOptions(item).map((opt) => (
+                            <button key={opt} onClick={() => updateVariant(item.id, opt)}
+                              className={`text-[10px] px-2.5 py-1 rounded-full border transition-all duration-300 ${item.variant === opt ? "border-sage bg-sage text-white" : "border-latte text-stone hover:border-sage/50"}`}
+                            >{opt}</button>
+                          ))}
+                        </div>
+                      )}
+                      {/* Notes Input */}
+                      <input
+                        type="text"
+                        placeholder="Tambah catatan... (opsional)"
+                        value={item.notes || ""}
+                        onChange={(e) => updateNotes(item.id, e.target.value)}
+                        className="w-full text-xs bg-bone border border-latte/50 rounded-xl px-3 py-2 mb-3 focus:outline-none focus:border-sage focus:ring-2 focus:ring-sage/10 transition-all placeholder:text-stone/50"
+                      />
+                      <div className="flex items-center justify-between">
                         <div className="flex items-center bg-bone rounded-full border border-latte px-1 py-1">
                           <button onClick={() => updateQuantity(item.id, -1)} className="w-6 h-6 rounded-full flex items-center justify-center hover:bg-white text-stone hover:text-charcoal"><Minus className="w-3 h-3" /></button>
                           <span className="w-8 text-center text-xs font-medium">{item.quantity}</span>
@@ -697,7 +853,7 @@ export default function Template3() {
                   {deliveryMethod === "Dine In" && dineInOption === "Scan Barcode Meja" && <div className="flex justify-between text-stone"><span>Nomor Meja</span><span className="text-charcoal font-bold">{tableNumber}</span></div>}
                   {deliveryMethod === "Take Away / Pick-Up" && pickupTime && <div className="flex justify-between text-stone"><span>Jam Ambil</span><span className="text-charcoal">{pickupTime}</span></div>}
                   <div className="flex justify-between text-stone"><span>Pembayaran</span><span className="text-charcoal">{paymentMethod}</span></div>
-                  {isGift && <div className="flex justify-between text-stone items-start mt-2 pt-2 border-t border-latte border-dashed"><span className="flex items-center gap-1"><Gift className="w-3 h-3 text-sage"/> Pesan Hadiah</span><span className="text-charcoal text-right italic max-w-[60%]">"{giftNote}"</span></div>}
+                  {isGift && <div className="flex justify-between text-stone items-start mt-2 pt-2 border-t border-latte border-dashed"><span className="flex items-center gap-1"><Gift className="w-3 h-3 text-sage" /> Pesan Hadiah</span><span className="text-charcoal text-right italic max-w-[60%]">"{giftNote}"</span></div>}
                 </div>
                 {paymentMethod === "Transfer" && (
                   <div className="bg-white p-4 rounded-2xl border border-latte space-y-3">
@@ -748,7 +904,7 @@ export default function Template3() {
                     </div>
                     <h3 className="font-serif text-2xl text-charcoal mb-1">Terima Kasih</h3>
                     <p className="text-stone font-light mb-4">Pesanan Anda segera diproses.</p>
-                    
+
                     {/* Unique Code & Table Detail Display */}
                     <div className="bg-white border border-latte px-6 py-4 rounded-2xl shadow-sm flex flex-col gap-3 min-w-[200px]">
                       <div>
@@ -762,7 +918,7 @@ export default function Template3() {
                         </div>
                       )}
                     </div>
-                    
+
                     <div className="mt-6">
                       <button onClick={sendWhatsAppMessage} className="text-sage text-sm font-medium hover:underline">Buka WhatsApp Sekarang →</button>
                     </div>
@@ -773,6 +929,23 @@ export default function Template3() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* WhatsApp Floating Button */}
+      <motion.a
+        href={`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent("Halo Kopi Tenang Jiwa, saya ingin bertanya...")}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        initial={{ scale: 0, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ delay: 1.5, type: "spring", stiffness: 200 }}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
+        className="fixed bottom-6 right-6 z-40 w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow group"
+        aria-label="Chat WhatsApp"
+      >
+        <Send className="w-6 h-6 text-white group-hover:rotate-12 transition-transform" />
+        <span className="absolute -top-2 -right-2 w-4 h-4 bg-sage rounded-full animate-ping" />
+      </motion.a>
     </div>
   );
 }

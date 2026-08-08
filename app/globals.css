@@ -349,7 +349,7 @@ h1.hero-head {
   margin-top: 96px;
   border-top: 1px solid var(--line);
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(6, 1fr);
 }
 
 .index-ruler a {
@@ -1191,8 +1191,11 @@ footer .mono {
   .index-ruler {
     grid-template-columns: 1fr 1fr;
   }
-  .index-ruler a:nth-child(3) {
+  .index-ruler a:nth-child(odd) {
     border-left: none;
+  }
+  .index-ruler a:nth-child(even) {
+    border-left: 1px solid var(--line);
   }
   .faq-support-card {
     padding: 24px;

@@ -10,7 +10,8 @@ export default function Katalog() {
     'Toko',
     'Web Undangan',
     'Portofolio',
-    'Tugas Sekolah/Kuliah',
+    'Website Pendidikan',
+    'Tugas Sekolah/Kuliah'
   ];
 
   return (
@@ -18,7 +19,7 @@ export default function Katalog() {
       <div className="wrap">
         <div className="section-head reveal">
           <div>
-            <div className="eyebrow">Katalog — 04 Tipe Situs</div>
+            <div className="eyebrow">Katalog — 06 Tipe Situs</div>
             <h2 className="section-title">
               Build your{' '}
               <span className="inline-block whitespace-nowrap">

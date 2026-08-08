@@ -34,6 +34,12 @@ export default function Hero() {
           <a href="#kat-04" data-cursor="04">
             <b>04 · Karya</b>Portofolio
           </a>
+          <a href="#kat-05" data-cursor="05">
+            <b>05 · Pendidikan</b>Web Pendidikan
+          </a>
+          <a href="#kat-06" data-cursor="06">
+            <b>06 · Joki Tugas</b>Tugas Kuliah/Sekolah/Kantor
+          </a>
         </div>
       </div>
 
