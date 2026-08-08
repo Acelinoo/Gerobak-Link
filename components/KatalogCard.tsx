@@ -57,6 +57,28 @@ export default function KatalogCard({ item, isReverse = false }: KatalogCardProp
                 top: 0, left: 0,
                 width: '100%', 
                 height: '100%', 
+                objectFit: 'cover',
+                pointerEvents: 'none'
+              }}
+              alt={item.title}
+            />
+          </div>
+        ) : item.id === 'kat-02' ? (
+          <div style={{
+            position: 'absolute',
+            top: 0, left: 0, right: 0, bottom: 0,
+            zIndex: 0,
+            overflow: 'hidden',
+            backgroundColor: '#0a0a0a',
+          }}>
+            <img 
+              src="/Toko.png" 
+              style={{ 
+                position: 'absolute',
+                top: 0, left: 0,
+                width: '100%', 
+                height: '100%', 
+                objectFit: 'cover',
                 pointerEvents: 'none'
               }}
               alt={item.title}
@@ -77,6 +99,7 @@ export default function KatalogCard({ item, isReverse = false }: KatalogCardProp
                 top: 0, left: 0,
                 width: '100%', 
                 height: '100%', 
+                objectFit: 'cover',
                 pointerEvents: 'none'
               }}
               alt={item.title}
@@ -97,6 +120,29 @@ export default function KatalogCard({ item, isReverse = false }: KatalogCardProp
                 top: 0, left: 0,
                 width: '100%', 
                 height: '100%', 
+                objectFit: 'cover',
+                pointerEvents: 'none'
+              }}
+              alt={item.title}
+            />
+          </div>
+        ) : item.id === 'kat-05' ? (
+          <div style={{
+            position: 'absolute',
+            top: 0, left: 0, right: 0, bottom: 0,
+            zIndex: 0,
+            overflow: 'hidden',
+            backgroundColor: '#FAFAFA',
+          }}>
+            <img 
+              src="/web-pendidikan.jpg" 
+              style={{ 
+                position: 'absolute',
+                top: 0, left: 0,
+                width: '100%', 
+                height: '100%', 
+                objectFit: 'cover',
+                objectPosition: 'top',
                 pointerEvents: 'none'
               }}
               alt={item.title}
